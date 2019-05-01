@@ -2,3 +2,14 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.header-color {
+  --ion-background-color: #212121 !important;
+  --background: #212121 !important;
+  color: white;
+  text-align: center;
+}
+
+ion-content {
+  --ion-background-color: white !important;
+}
