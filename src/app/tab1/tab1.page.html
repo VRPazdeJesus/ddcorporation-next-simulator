@@ -11,14 +11,14 @@
       <ion-img src="/assets/dreams.png"></ion-img>
       <ion-card-header>
         <ion-card-subtitle>Qual será o valor aplicado?</ion-card-subtitle>
-        <ion-input class="input-value-card" placeholder="R$ 0,00"></ion-input>
+        <ion-input type="number" class="input-value-card" placeholder="R$ 0.00" [(ngModel)]="investimento"></ion-input>
         <ion-card-subtitle>O valor equivalente em dólar é: US$ 600,00</ion-card-subtitle>
         <ion-card-subtitle>Selecione agora a taxa de rendimento!</ion-card-subtitle>
-        <ion-range min="1" max="15" step="1" snaps="true" pin="true">
+        <ion-range min="1" max="15" step="1" snaps="true" pin="true" [(ngModel)]="taxa">
           <ion-label slot="start">1</ion-label>
-          <ion-label slot="">2</ion-label>
           <ion-label slot="end">15</ion-label>
         </ion-range>
+        <ion-button expand="block" (click) ="simular()" >Simular</ion-button>
       </ion-card-header>
     </ion-card>
 
