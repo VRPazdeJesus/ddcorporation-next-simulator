@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   public investimento:any;
+  public taxa:any;
 
   constructor() {
     
@@ -14,6 +15,7 @@ export class Tab1Page {
 
   simular() {
     console.log('O investimento foi de', this.investimento / 2);
+    console.log('E a taxa foi de', this.taxa);
   }
 
 }
