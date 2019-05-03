@@ -23,7 +23,23 @@
 
     <ion-card class="welcome-card header-color">
       <ion-card-header>
-        <ion-card-title class="text-white size-letter-upper">Total R$ {{totalPrimeiroAno}}</ion-card-title>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <div>
+                <p class="text-white size-letter-upper">R$ {{totalPrimeiroAno}}</p>
+                <p class="text-white">Total em 12 meses</p>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div>
+                <p>R$ {{totalPrimeiroAnoMes}}</p>
+                <p class="text-white">Rendimento por mês</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- <ion-card-title class="text-white size-letter-upper"> </ion-card-title> -->
         <ion-grid>
           <ion-row>
             <ion-col size="8">
@@ -68,7 +84,7 @@
         <!-- <ion-card-subtitle class="text-white size-letter-lower"> </ion-card-subtitle> -->
       </ion-card-header>
       <ion-card-content >
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+        <p>Detalhamento...</p>
       </ion-card-content>
     </ion-card>
 

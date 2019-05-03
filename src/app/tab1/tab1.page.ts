@@ -18,6 +18,7 @@ export class Tab1Page {
   public primeiroAno:Array<number> = [];
   public totalPrimeiroAno:any;
   public totalPrimeiroAnoRendimentos:any;
+  public totalPrimeiroAnoMes:any;
   public segundoAno:Array<number> = [];
 
   constructor(public http: Http) {
@@ -27,6 +28,7 @@ export class Tab1Page {
     this.investimentoArredondado = 0;
     this.totalPrimeiroAno = 0;
     this.totalPrimeiroAnoRendimentos = 0;
+    this.totalPrimeiroAnoMes = 0;
     this.getDollar();
   }
 
