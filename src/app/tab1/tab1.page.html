@@ -12,13 +12,12 @@
       <ion-card-header>
         <ion-card-subtitle>Qual será o valor aplicado?</ion-card-subtitle>
         <ion-input type="number" class="input-value-card" placeholder="R$ 0.00" [(ngModel)]="investimento"></ion-input>
-        <ion-card-subtitle>O valor equivalente em dólar é: US$ 600,00</ion-card-subtitle>
         <ion-card-subtitle>Selecione agora a taxa de rendimento!</ion-card-subtitle>
         <ion-range value=1 min="1" max="15" step="1" snaps="true" pin="true" [(ngModel)]="taxa">
           <ion-label slot="start">1%</ion-label>
           <ion-label slot="end">15%</ion-label>
         </ion-range>
-        <ion-button expand="block" (click) ="simular()" >Simular</ion-button>
+        <ion-button expand="block" (click) ="getSimular()">Simular</ion-button>
       </ion-card-header>
     </ion-card>
 
@@ -26,7 +25,8 @@
       <ion-card-header>
         <ion-card-title class="text-white size-letter-upper">Total R$ 2.851,20</ion-card-title>
         <ion-card-title class="text-white size-letter-lower">Rendimentos + Investimentos</ion-card-title>
-        <ion-card-title class="text-white put-margin-bottom">R$ 4.831,20</ion-card-title>
+        <ion-card-title class="text-white size-letter-lower put-margin-bottom">R$ 4.831,20</ion-card-title>
+        <ion-card-subtitle class="text-white size-letter-lower">O valor do investimento em dólar é: US$ {{valorAproximado}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content >
         <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
