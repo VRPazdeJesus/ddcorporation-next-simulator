@@ -10,17 +10,23 @@ import 'rxjs/add/operator/map';
 
 export class Tab1Page {
   public investimento:any;
+  public investimentoArredondado:any;
   public taxa:any;
   public dolar:any;
-  public valorAproximado:any;
+  public valorEquivalenteDollar:any;
   public pontos:any;
-  public primeiroAno:Array<object> = [];
-  public segundoAno:Array<object> = [];
+  public primeiroAno:Array<number> = [];
+  public totalPrimeiroAno:any;
+  public totalPrimeiroAnoRendimentos:any;
+  public segundoAno:Array<number> = [];
 
   constructor(public http: Http) {
     this.dolar = 3;
-    this.valorAproximado = 0;
+    this.valorEquivalenteDollar = 0;
     this.pontos = 0;
+    this.investimentoArredondado = 0;
+    this.totalPrimeiroAno = 0;
+    this.totalPrimeiroAnoRendimentos = 0;
     this.getDollar();
   }
 
@@ -37,16 +43,23 @@ export class Tab1Page {
 
   //método chamado pelo clique do botão simular
   getSimular() {
-    this.valorAproximado = (this.investimento/this.dolar).toFixed(2);
-    this.pontos = (this.valorAproximado / 50).toFixed(1);
-    this.calculoMeses(this.investimento, this.taxa, this.dolar);
+    this.investimentoArredondado = (this.investimento - (this.investimento*0.01)).toFixed(2);
+    this.valorEquivalenteDollar = (this.investimentoArredondado/this.dolar).toFixed(2);
+    this.pontos = (this.valorEquivalenteDollar / 50).toFixed(1);
+    this.calculoMeses(this.investimentoArredondado, this.taxa);
   }
 
   //Cálculo dos rendimentos do primeiro e segundo ano
-  calculoMeses(investimento:any, taxa:any, dolar:any) {
+  calculoMeses(investimento:any, taxa:any) {
+    //investimentos do primeiro ano
+    for(var i=0; i<12; i++) {
+      this.primeiroAno[i] = (investimento*(taxa/100));
+      this.totalPrimeiroAno = this.totalPrimeiroAno + this.primeiroAno[i];
+    }
+    console.log(this.totalPrimeiroAno);
     console.log(investimento);
-    console.log(taxa);
-    console.log(dolar);
+    this.totalPrimeiroAnoRendimentos = (parseFloat(investimento) + parseFloat(this.totalPrimeiroAno)).toFixed(2);
+
   }
 
 }
