@@ -13,11 +13,11 @@
         <ion-card-subtitle>Qual será o valor aplicado?</ion-card-subtitle>
         <ion-input type="number" class="input-value-card" placeholder="R$ 0.00" [(ngModel)]="investimento"></ion-input>
         <ion-card-subtitle>Selecione agora a taxa de rendimento!</ion-card-subtitle>
-        <ion-range value=1 min="0" max="100" step="1" snaps="true" pin="true" [(ngModel)]="taxa">
+        <ion-range color="dark" value=1 min="0" max="100" step="1" snaps="true" pin="true" [(ngModel)]="taxa">
           <ion-label slot="start">0%</ion-label>
           <ion-label slot="end">100%</ion-label>
         </ion-range>
-        <ion-button expand="block" (click) ="getSimular()">Simular</ion-button>
+        <ion-button class="header-color" expand="block" (click) ="getSimular()">Simular</ion-button>
       </ion-card-header>
     </ion-card>
 
