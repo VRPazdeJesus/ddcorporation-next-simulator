@@ -11,7 +11,7 @@
       <ion-img class="size-logo center" src="/assets/next.png"></ion-img>
       <ion-card-header>
         <ion-card-subtitle>Qual será o valor aplicado?</ion-card-subtitle>
-        <ion-input type="number" class="input-value-card" placeholder="R$ 0.00" [(ngModel)]="investimento"></ion-input>
+        <ion-input type="number" class="input-value-card" placeholder="R$ 0.00" [(ngModel)]="valorAplicado"></ion-input>
         <ion-card-subtitle>Selecione agora a taxa de rendimento!</ion-card-subtitle>
         <ion-range color="dark" value=1 min="0" max="100" step="1" snaps="true" pin="true" [(ngModel)]="taxa">
           <ion-label slot="start">0%</ion-label>
@@ -27,13 +27,13 @@
           <ion-row>
             <ion-col size="6">
               <div>
-                <p class="text-white size-letter-upper">R$ {{totalPrimeiroAno}}</p>
+                <p class="text-white size-letter-upper">R$ {{totalRendimento}}</p>
                 <p class="text-white">Total em 12 meses</p>
               </div>
             </ion-col>
             <ion-col size="6">
               <div>
-                <p class="text-white size-letter-upper">R$ {{totalPrimeiroAnoMes}}</p>
+                <p class="text-white size-letter-upper">R$ {{rendimentoMensal}}</p>
                 <p class="text-white">Rendimento/mês</p>
               </div>
             </ion-col>
@@ -48,7 +48,7 @@
             </ion-col>
             <ion-col size="4">
               <div>
-                <p class="text-white">R$ {{totalPrimeiroAnoRendimentos}}</p>
+                <p class="text-white">R$ {{rendimentoValorInvestido}}</p>
               </div>
             </ion-col>
           </ion-row>
@@ -60,7 +60,7 @@
             </ion-col>
             <ion-col size="4">
               <div>
-                <p class="text-white">US$ {{valorEquivalenteDollar}}</p>
+                <p class="text-white">US$ {{valorInvestidoDollar}}</p>
               </div>
             </ion-col>
           </ion-row>
