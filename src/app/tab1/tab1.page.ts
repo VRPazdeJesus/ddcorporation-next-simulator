@@ -71,12 +71,12 @@ export class Tab1Page {
   calculoMeses(investimento:any, taxa:any) {
     //investimentos do primeiro ano
     for(var i=0; i<12; i++) {
-      this.primeiroAno[i] = (investimento*(taxa/100));
+      this.primeiroAno[i] = parseFloat(investimento*(taxa/100));
       this.totalPrimeiroAno = this.totalPrimeiroAno + this.primeiroAno[i];
     }
     this.totalPrimeiroAnoRendimentos = (parseFloat(investimento) + parseFloat(this.totalPrimeiroAno)).toFixed(2);
-    this.totalPrimeiroAnoMes = this.primeiroAno[0];
-    this.totalPrimeiroAno = this.totalPrimeiroAno.toFixed(2);
+    this.totalPrimeiroAnoMes = parseFloat(this.primeiroAno[0]).toFixed(2);
+    this.totalPrimeiroAno = parseFloat(this.totalPrimeiroAno).toFixed(2);
   }
 
 }
