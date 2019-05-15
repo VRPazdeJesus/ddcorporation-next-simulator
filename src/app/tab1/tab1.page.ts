@@ -13,6 +13,8 @@ export class Tab1Page {
   public valorAplicado:number;
   public taxa:number;
   public pontos:number;
+  public clique:boolean;
+  public icon: string;
   // Variáveis do rendimento
   public rendimentoMes:number;
   public rendimentoAnual:number;
@@ -28,6 +30,8 @@ export class Tab1Page {
     this.valorAplicado = 0;
     this.taxa = 12;
     this.pontos = 0;
+    this.clique = false;
+    this.icon = 'ios-add-circle-outline';
     this.rendimentoMes = 0;
     this.rendimentoAnual = 0;
     this.rendimentoAnualComInvestimento = 0;
@@ -65,5 +69,16 @@ export class Tab1Page {
     }
     this.rendimentoMes = this.primeiroAno[1];
     this.rendimentoAnualComInvestimento = this.rendimentoAnual + valorAplicado;
+  }
+
+  //clique no detalhamento
+  toggleDetails() {
+    if (this.clique) {
+      this.clique = false;
+      this.icon = 'ios-add-circle-outline';
+    } else {
+      this.clique = true;
+      this.icon = 'ios-remove-circle-outline';
+    }
   }
 }
