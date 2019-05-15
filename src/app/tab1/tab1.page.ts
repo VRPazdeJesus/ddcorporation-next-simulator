@@ -26,7 +26,7 @@ export class Tab1Page {
   constructor() {
     this.investimentoMinimo = 165;
     this.valorAplicado = 0;
-    this.taxa = 0;
+    this.taxa = 12;
     this.pontos = 0;
     this.rendimentoMes = 0;
     this.somatorioAnual = 0;
