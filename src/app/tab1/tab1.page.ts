@@ -7,82 +7,63 @@ import { Component } from '@angular/core';
 })
 
 export class Tab1Page {
-  public dollar:number;
+  // Variáveis dos inputs
+  public investimentoMinimo:number;
+  public investimento:number;
   public valorAplicado:number;
-  public valorInvestido:number;
   public taxa:number;
-  public totalRendimento:number;
-  public rendimentoMensal:number;
-  public rendimentoValorInvestido:number;
-  public valorInvestidoDollar:number;
   public pontos:number;
+  // Variáveis do rendimento
+  public rendimentoMes:number;
+  public somatorioAnual:number;
+  public somatorioAnualComInvestimento:number;
   public primeiroAno:Array<number> = [];
-  public segundoAno:Array<number> = [];
+  // Variáveis do rendimento reaplicado
+  public somatorioAnualReaplicado:number;
+  public somatorioAnualComInvestimentoRe:number;
+  public primeiroAnoReaplicado:Array<number> = [];
 
   constructor() {
-    this.dollar = 3.30;
+    this.investimentoMinimo = 165;
     this.valorAplicado = 0;
-    this.valorInvestido = 0;
     this.taxa = 0;
-    this.totalRendimento = 0;
-    this.rendimentoMensal = 0;
-    this.rendimentoValorInvestido = 0;
-    this.valorInvestidoDollar = 0;
     this.pontos = 0;
-  }
-
-  limpaDados() {
-    this.valorAplicado = 0;
-    this.valorInvestido = 0;
-    this.taxa = 0;
-    this.totalRendimento = 0;
-    this.rendimentoMensal = 0;
-    this.rendimentoValorInvestido = 0;
-    this.valorInvestidoDollar = 0;
-    this.pontos = 0;
-    this.primeiroAno = [];
-    this.segundoAno = [];
+    this.rendimentoMes = 0;
+    this.somatorioAnual = 0;
+    this.somatorioAnualComInvestimento = 0;
+    this.somatorioAnualReaplicado = 0;
+    this.somatorioAnualComInvestimentoRe = 0;
   }
 
   //método chamado pelo clique do botão simular
   getSimular() {
-    this.marred(this.valorAplicado,165);
-    this.valorInvestidoDollar = this.valorInvestido/this.dollar;
-    console.log("Valor Investido em Dollar", this.valorInvestidoDollar);
-    this.pontos = (this.valorInvestidoDollar / 50)*8;
-    console.log("Pontos", this.pontos);
-    this.calcularMeses(this.valorInvestido, this.taxa);
+    this.marred(this.investimento, this.investimentoMinimo);
+    this.pontosRede(this.valorAplicado, this.investimentoMinimo);
+    this.calculaRendimentos(this.valorAplicado, this.taxa);
   }
 
-  marred(valorAplicado:number, multiplo:number) {
-    console.log("Valor aplicado", valorAplicado);
-    console.log("Taxa", this.taxa);
-    console.log("Multiplo", multiplo);
-    
-    //50 dolares x 3,30 da 165 reais
-    let quantidade = valorAplicado / multiplo;
-    console.log("Quantidade", quantidade);
-    this.valorInvestido = Math.trunc(quantidade) * 165;
-    console.log("Valor investido", this.valorInvestido);
+  //calcula o valor aceitavel a ser aplicado, um valor que seja divisível pelo investimento mínimo
+  marred(investimento:number, investimentoMinimo:number) {
+    this.valorAplicado = (investimentoMinimo * (Math.trunc(investimento / investimentoMinimo)));
+    console.log("O valor a ser aplicado será de: ", this.valorAplicado);
   }
 
-  //Cálculo dos rendimentos do primeiro e segundo ano
-  calcularMeses(valorInvestido:number, taxa:number) {
-    console.log("Valor investido", valorInvestido);
-    console.log("Taxa", taxa);
-    this.totalRendimento = 0;
-    //investimentos do primeiro ano
-    for(var i=0; i<12; i++) {
-      this.primeiroAno[i] = valorInvestido*(taxa/100);
-      this.totalRendimento = this.totalRendimento + this.primeiroAno[i];
+  //calcula a quantidade de pontos para a rede
+  pontosRede(valorAplicado:number, investimentoMinimo:number) {
+    this.pontos = (valorAplicado/investimentoMinimo)*8;
+    console.log("O valor de pontos será de: ", this.pontos);
+  }
+
+  //calcula os rendimentos a juros simples
+  calculaRendimentos(valorAplicado:number, taxa:number) {
+    var mes;
+    this.somatorioAnual = 0;
+    this.somatorioAnualComInvestimento = 0;
+    for(mes = 1; mes < 13; mes++) {
+      this.primeiroAno[mes] = (valorAplicado * (taxa/100));
+      this.somatorioAnual = this.somatorioAnual + this.primeiroAno[mes];
     }
-    console.log("Total rendimento", this.totalRendimento);
-    this.rendimentoValorInvestido = valorInvestido + this.totalRendimento;
-    console.log("Rendimentos com Valor investido", this.rendimentoValorInvestido);
-    this.rendimentoMensal = this.primeiroAno[0];
-    console.log("Rendimento mensal", this.rendimentoMensal);
+    this.rendimentoMes = this.primeiroAno[1];
+    this.somatorioAnualComInvestimento = this.somatorioAnual + valorAplicado;
   }
-
-  
-
 }

@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
