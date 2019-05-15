@@ -15,12 +15,12 @@ export class Tab1Page {
   public pontos:number;
   // Variáveis do rendimento
   public rendimentoMes:number;
-  public somatorioAnual:number;
-  public somatorioAnualComInvestimento:number;
+  public rendimentoAnual:number;
+  public rendimentoAnualComInvestimento:number;
   public primeiroAno:Array<number> = [];
   // Variáveis do rendimento reaplicado
-  public somatorioAnualReaplicado:number;
-  public somatorioAnualComInvestimentoRe:number;
+  public rendimentoAnualReaplicado:number;
+  public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
 
   constructor() {
@@ -29,10 +29,10 @@ export class Tab1Page {
     this.taxa = 12;
     this.pontos = 0;
     this.rendimentoMes = 0;
-    this.somatorioAnual = 0;
-    this.somatorioAnualComInvestimento = 0;
-    this.somatorioAnualReaplicado = 0;
-    this.somatorioAnualComInvestimentoRe = 0;
+    this.rendimentoAnual = 0;
+    this.rendimentoAnualComInvestimento = 0;
+    this.rendimentoAnualReaplicado = 0;
+    this.rendimentoAnualComInvestimentoRe = 0;
   }
 
   //método chamado pelo clique do botão simular
@@ -57,13 +57,13 @@ export class Tab1Page {
   //calcula os rendimentos a juros simples
   calculaRendimentos(valorAplicado:number, taxa:number) {
     var mes;
-    this.somatorioAnual = 0;
-    this.somatorioAnualComInvestimento = 0;
+    this.rendimentoAnual = 0;
+    this.rendimentoAnualComInvestimento = 0;
     for(mes = 1; mes < 13; mes++) {
       this.primeiroAno[mes] = (valorAplicado * (taxa/100));
-      this.somatorioAnual = this.somatorioAnual + this.primeiroAno[mes];
+      this.rendimentoAnual = this.rendimentoAnual + this.primeiroAno[mes];
     }
     this.rendimentoMes = this.primeiroAno[1];
-    this.somatorioAnualComInvestimento = this.somatorioAnual + valorAplicado;
+    this.rendimentoAnualComInvestimento = this.rendimentoAnual + valorAplicado;
   }
 }
