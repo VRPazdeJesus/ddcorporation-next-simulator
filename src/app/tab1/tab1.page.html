@@ -1,8 +1,6 @@
 <ion-header>
   <ion-toolbar class="header-color">
-    <ion-title>
-      Simulador do Next
-    </ion-title>
+    <ion-title>Simulador do Next</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,59 +19,117 @@
       </ion-card-header>
     </ion-card>
 
-    <ion-card class="welcome-card header-color">
-      <ion-card-header>
-        <div>
-          <p class="text-white">O valor a ser aplicado será de {{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-          <p class="text-white">O investimento deve ser múltiplo de R$ 165</p>
-        </div>
-        <ion-grid>
-          <ion-row>
-            <ion-col size="12">
-              <div>
-                <p class="text-white size-letter-upper">{{rendimentoMes | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                <p class="text-white">Rendimento/mês</p>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-header>
-      <ion-card-content class="alinhamento-centro">
-        <ion-list (click)="toggleDetails()">
-          <ion-icon class="tamanho-icone" color="primary" item-right [name]="icon"></ion-icon>
-          <ion-item class="alinhamento-centro">
-            <div *ngIf="clique">
-              <ion-grid>
-                <ion-row>
-                  <ion-col size="7">
-                    <div>
-                      <p class="text-white">Rendimento anual</p>
-                    </div>
-                  </ion-col>
-                  <ion-col size="5">
-                    <div>
-                        <p class="text-white">{{rendimentoAnual | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                    </div>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col size="7">
-                    <div>
-                      <p class="text-white">Rendimentos + Investimentos</p>
-                    </div>
-                  </ion-col>
-                  <ion-col size="5">
-                    <div>
-                      <p class="text-white">{{rendimentoAnualComInvestimento | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                    </div>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
+    <ion-slides>
+      <ion-slide>
+        <ion-card class="welcome-card header-color">
+          <ion-card-header>
+            <div>
+              <p class="text-white">O valor a ser aplicado será de {{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+              <p class="text-white">O investimento deve ser múltiplo de R$ 165</p>
             </div>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <div>
+                    <p class="text-white size-letter-upper">{{rendimentoMes | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                    <p class="text-white">Rendimento/mês</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+          <ion-card-content class="alinhamento-centro">
+            <ion-list (click)="toggleDetails()">
+              <ion-icon class="tamanho-icone" color="primary" item-right [name]="icon"></ion-icon>
+              <ion-item class="alinhamento-centro">
+                <div *ngIf="clique">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="7">
+                        <div>
+                          <p class="text-white">Rendimento anual</p>
+                        </div>
+                      </ion-col>
+                      <ion-col size="5">
+                        <div>
+                            <p class="text-white">{{rendimentoAnual | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="7">
+                        <div>
+                          <p class="text-white">Rendimentos + Investimentos</p>
+                        </div>
+                      </ion-col>
+                      <ion-col size="5">
+                        <div>
+                          <p class="text-white">{{rendimentoAnualComInvestimento | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </div>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card class="welcome-card header-color">
+          <ion-card-header>
+            <div>
+              <p class="text-white">O valor a ser aplicado será de {{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+              <p class="text-white">O investimento deve ser múltiplo de R$ 165</p>
+            </div>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <div>
+                    <p class="text-white size-letter-upper">{{rendimentoMes | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                    <p class="text-white">Rendimento/mês</p>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+          <ion-card-content class="alinhamento-centro">
+            <ion-list (click)="toggleDetails()">
+              <ion-icon class="tamanho-icone" color="primary" item-right [name]="icon"></ion-icon>
+              <ion-item class="alinhamento-centro">
+                <div *ngIf="clique">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="7">
+                        <div>
+                          <p class="text-white">Rendimento anual</p>
+                        </div>
+                      </ion-col>
+                      <ion-col size="5">
+                        <div>
+                            <p class="text-white">{{rendimentoAnual | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="7">
+                        <div>
+                          <p class="text-white">Rendimentos + Investimentos</p>
+                        </div>
+                      </ion-col>
+                      <ion-col size="5">
+                        <div>
+                          <p class="text-white">{{rendimentoAnualComInvestimento | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
+                        </div>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </div>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
     
 </ion-content>
