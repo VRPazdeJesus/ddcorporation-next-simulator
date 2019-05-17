@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 
-export class Tab1Page {
+export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   // Variáveis dos inputs
   public investimentoMinimo:number;
   public investimento:number;
@@ -15,6 +17,7 @@ export class Tab1Page {
   public pontos:number;
   public clique:boolean;
   public icon: string;
+  public backButtonSubscription;
   // Variáveis do rendimento
   public rendimentoMes:number;
   public rendimentoAnual:number;
@@ -25,7 +28,7 @@ export class Tab1Page {
   public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
 
-  constructor() {
+  constructor(private platform: Platform) {
     this.investimentoMinimo = 165;
     this.valorAplicado = 0;
     this.taxa = 12;
@@ -80,5 +83,16 @@ export class Tab1Page {
       this.clique = true;
       this.icon = 'ios-remove-circle-outline';
     }
+  }
+
+  //Concotrle de inicialização e destruição da sessão
+  ngOnInit() { }
+  ngAfterViewInit() {
+    this.backButtonSubscription = this.platform.backButton.subscribe(() => {
+      navigator['app'].exitApp();
+    });
+  }
+  ngOnDestroy() {
+    this.backButtonSubscription.unsubscribe();
   }
 }
