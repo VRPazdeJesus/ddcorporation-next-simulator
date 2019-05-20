@@ -47,6 +47,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.marred(this.investimento, this.investimentoMinimo);
     this.pontosRede(this.valorAplicado, this.investimentoMinimo);
     this.calculaRendimentos(this.valorAplicado, this.taxa);
+    this.calculaRendimentosReaplicados(this.valorAplicado, this.taxa);
   }
 
   //calcula o valor aceitavel a ser aplicado, um valor que seja divisível pelo investimento mínimo
@@ -77,26 +78,45 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   //calcula os rendimentos a juros compostos
   calculaRendimentosReaplicados(valorAplicado:number, taxa:number) {
     var mes;
+    var mesPassado;
+    var m;
     var acumuladoJurosSimples = 0;
     var acumuladoJurosCompostos = 0;
     var rendimento = 0;
     this.rendimentoAnualReaplicado = 0;
     this.rendimentoAnualComInvestimentoRe = 0;
+    var indice:Array<number> = [];
     for(mes = 1; mes < 13; mes++) {
-      acumuladoJurosSimples = acumuladoJurosSimples + this.primeiroAno[mes];
       if(mes == 1){
         rendimento = 0;
         this.primeiroAnoReaplicado[mes] = rendimento;
-      } else if(acumuladoJurosSimples < 165) {
-        rendimento = 0;
-        this.primeiroAnoReaplicado[mes] = rendimento;
-      } else if((acumuladoJurosSimples >= 165) && (mes > 1)) {
-        rendimento = ((valorAplicado + this.primeiroAno[1] + acumuladoJurosCompostos) * (taxa/100));
-        this.primeiroAnoReaplicado[mes] = rendimento;
+        indice.push(mes);
+      } else {
+        for(mesPassado = 1; mesPassado < mes; mesPassado++) {
+          acumuladoJurosSimples = acumuladoJurosSimples + this.primeiroAno[mesPassado];
+        }
+        if(acumuladoJurosSimples < 165) {
+          rendimento = 0;
+          this.primeiroAnoReaplicado[mes] = rendimento;
+          indice.push(mes);
+        } else if(acumuladoJurosSimples >= 165) {
+          for( m = 1; m < mes; m++) {
+            acumuladoJurosCompostos = acumuladoJurosCompostos + this.primeiroAnoReaplicado[m];
+          }
+          rendimento = ((valorAplicado + this.primeiroAno[1] + acumuladoJurosCompostos) * (taxa/100));
+          this.primeiroAnoReaplicado[mes] = rendimento;
+        }
+        acumuladoJurosCompostos = 0;
       }
-      acumuladoJurosCompostos = acumuladoJurosCompostos + rendimento;
     }
-    this.rendimentoAnualReaplicado = acumuladoJurosCompostos;
+    for(mes = 1; mes < 13; mes++) {
+      this.rendimentoAnualReaplicado = this.rendimentoAnualReaplicado + this.primeiroAnoReaplicado[mes];
+    }
+    rendimento = 0;
+    for(mes = 0; mes < indice.length; mes++) {
+      rendimento = rendimento + this.primeiroAno[indice[mes]];
+    }
+    this.rendimentoAnualReaplicado = this.rendimentoAnualReaplicado + rendimento;
     this.rendimentoAnualComInvestimentoRe = this.rendimentoAnualReaplicado + valorAplicado;
   }
 
