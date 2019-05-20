@@ -74,6 +74,29 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.rendimentoAnualComInvestimento = this.rendimentoAnual + valorAplicado;
   }
 
+  //calcula os rendimentos a juros compostos
+  calculaRendimentosReaplicados(valorAplicado:number, taxa:number) {
+    var mes;
+    var acumuladoJurosSimples = 0;
+    var acumuladoJurosCompostos = 0;
+    var rendimento = 0;
+    for(mes = 1; mes < 13; mes++) {
+      acumuladoJurosSimples = acumuladoJurosSimples + this.primeiroAno[mes];
+      if(mes == 1){
+        rendimento = 0;
+        this.primeiroAnoReaplicado[mes] = rendimento;
+      } else if(acumuladoJurosSimples < 165) {
+        rendimento = 0;
+        this.primeiroAnoReaplicado[mes] = rendimento;
+      } else if((acumuladoJurosSimples >= 165) && (mes > 1)) {
+        rendimento = ((valorAplicado + this.primeiroAno[1] + acumuladoJurosCompostos) * (taxa/100));
+        this.primeiroAnoReaplicado[mes] = rendimento;
+      }
+      acumuladoJurosCompostos = acumuladoJurosCompostos + rendimento;
+    }
+
+  }
+
   //clique no detalhamento
   toggleDetails() {
     if (this.clique) {
