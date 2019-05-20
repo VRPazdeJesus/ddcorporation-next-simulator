@@ -80,6 +80,8 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     var acumuladoJurosSimples = 0;
     var acumuladoJurosCompostos = 0;
     var rendimento = 0;
+    this.rendimentoAnualReaplicado = 0;
+    this.rendimentoAnualComInvestimentoRe = 0;
     for(mes = 1; mes < 13; mes++) {
       acumuladoJurosSimples = acumuladoJurosSimples + this.primeiroAno[mes];
       if(mes == 1){
@@ -94,7 +96,8 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
       }
       acumuladoJurosCompostos = acumuladoJurosCompostos + rendimento;
     }
-
+    this.rendimentoAnualReaplicado = acumuladoJurosCompostos;
+    this.rendimentoAnualComInvestimentoRe = this.rendimentoAnualReaplicado + valorAplicado;
   }
 
   //clique no detalhamento
