@@ -10,6 +10,18 @@
   text-align: center;
 }
 
+.border-btn-grey {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.header-color-contrast {
+  --ion-background-color: white !important;
+  --background: white !important;
+  color: #212121;
+  text-align: center;
+}
+
 ion-content {
   --ion-background-color: white !important;
 }
@@ -57,5 +69,11 @@ ion-content {
 }
 
 .tamanho-icone {
+  color: white;
   font-size: 20px !important;
+  margin-left: 30px;
+}
+
+.remove-lista {
+  display: none;
 }

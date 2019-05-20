@@ -39,11 +39,10 @@
             </ion-grid>
           </ion-card-header>
           <ion-card-content class="alinhamento-centro">
-            <ion-list (click)="toggleDetails()">
-              <ion-icon class="tamanho-icone" color="primary" item-right [name]="icon"></ion-icon>
+            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()">Detalhamento<ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
+            <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
               <ion-item class="alinhamento-centro">
                 <div *ngIf="clique">
-                  <p class="text-white size-letter-upper">Detalhamento:</p>
                   <!-- Meses e rendimentos -->
                   <ion-grid>
                     <ion-row>
@@ -267,11 +266,10 @@
             </ion-grid>
           </ion-card-header>
           <ion-card-content class="alinhamento-centro">
-            <ion-list (click)="toggleDetails()">
-              <ion-icon class="tamanho-icone" color="primary" item-right [name]="icon"></ion-icon>
+            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()">Detalhamento<ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
+            <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
               <ion-item class="alinhamento-centro">
                 <div *ngIf="clique">
-                  <p class="text-white size-letter-upper">Detalhamento:</p>
                   <!-- Meses e rendimentos -->
                   <ion-grid>
                     <ion-row>

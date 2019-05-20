@@ -34,7 +34,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.taxa = 12;
     this.pontos = 0;
     this.clique = false;
-    this.icon = 'ios-add-circle-outline';
+    this.icon = 'ios-arrow-down';
     this.rendimentoMes = 0;
     this.rendimentoAnual = 0;
     this.rendimentoAnualComInvestimento = 0;
@@ -123,11 +123,15 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   //clique no detalhamento
   toggleDetails() {
     if (this.clique) {
+      // document.getElementById("detalhamento").setAttribute("remove-lista", "_self");
+      console.log("fechou");
       this.clique = false;
-      this.icon = 'ios-add-circle-outline';
+      this.icon = 'ios-arrow-down';
     } else {
+      // document.getElementById("detalhamento").removeAttribute("class");
+      console.log("abriu");
       this.clique = true;
-      this.icon = 'ios-remove-circle-outline';
+      this.icon = 'ios-arrow-up';
     }
   }
 
