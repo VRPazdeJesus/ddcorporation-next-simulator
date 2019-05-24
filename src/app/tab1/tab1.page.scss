@@ -99,3 +99,21 @@ ion-content {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
+
+ion-slides span .swiper-pagination-bullet {
+  width: 100px !important;
+  height: 2px !important;
+  display: inline-block !important;
+  /* border-radius: 100%; */
+  background: #000 !important;
+  opacity: .2 !important;
+}
+
+div.item-native {
+  padding-left: unset;
+  padding-right: unset;
+  /* -webkit-padding-start: calc(var(--padding-start) + var(--ion-safe-area-left, 0px)); */
+  /* padding-inline-start: calc(var(--padding-start) + var(--ion-safe-area-left, 0px)); */
+  /* -webkit-padding-end: var(--padding-end); */
+  /* padding-inline-end: var(--padding-end); */
+}
