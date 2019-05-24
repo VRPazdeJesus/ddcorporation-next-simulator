@@ -7,7 +7,7 @@
 <ion-content>
     <ion-card class="welcome-card">
       <ion-img class="size-logo center" src="/assets/next.png"></ion-img>
-      <ion-card-header>
+      <ion-card-header class="margin-less">
         <ion-card-subtitle>Qual será o valor aplicado, em reais?</ion-card-subtitle>
         <ion-input type="number" class="input-value-card" placeholder="R$ 0,00" [(ngModel)]="investimento"></ion-input>
         <ion-card-subtitle>Taxa de rendimento: {{taxa}}%</ion-card-subtitle>
@@ -23,7 +23,7 @@
         <ion-card class="welcome-card header-color">
           <p class="text-white">Rendimento</p>
           <hr class="background-white">
-          <ion-card-header>
+          <ion-card-header class="margin-less">
             <ion-grid>
               <ion-row>
                 <ion-col size="12">
@@ -269,7 +269,7 @@
         <ion-card class="welcome-card header-color">
           <p class="text-white">Rendimento Reaplicado</p>
           <hr class="background-white">
-          <ion-card-header>
+          <ion-card-header class="margin-less">
             <ion-grid>
               <ion-row>
                 <ion-col size="12">
