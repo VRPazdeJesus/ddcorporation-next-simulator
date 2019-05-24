@@ -60,22 +60,6 @@
                 <ion-label class="text-white item-lista">Mês</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">Rendimento</ion-label>
               </ion-item>
-              <!-- <ion-item class="alinhamento-centro">
-                <ion-grid>
-                  <ion-row>
-                    <ion-col size="5">
-                      <div>
-                        <p class="text-white">Mês</p>
-                      </div>
-                    </ion-col>
-                    <ion-col size="7">
-                      <div>
-                          <p class="text-white">Rendimento</p>
-                      </div>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-item> -->
               <!-- 1 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">1º Mês</ion-label>
@@ -184,195 +168,86 @@
               <ion-item lines="none">
                 <ion-label class="text-white legenda">O investimento deve ser múltiplo de R$ 165</ion-label>
               </ion-item>
-              <ion-item class="alinhamento-centro">
-                <div>
-                  <!-- Meses e rendimentos -->
-                  <ion-grid>
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">Rendimento</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- primeiro -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">1º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- segundo -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">2º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- terceiro -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">3º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- quarto -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">4º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- quinto -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">5º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- sexto -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">6º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- sétimo -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">7º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- oitavo -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">8º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- nono -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">9º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- décimo -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">10º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- décimo primeiro -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">11º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                    <!-- décimo segundo -->
-                    <ion-row>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">12º Mês</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="7">
-                        <div>
-                            <p class="text-white">{{primeiroAnoReaplicado[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                  <!-- Outras info -->
-                  <ion-grid>
-                    <ion-row>
-                      <ion-col size="7">
-                        <div>
-                          <p class="text-white">Rendimentos Reaplicados + Investimentos</p>
-                        </div>
-                      </ion-col>
-                      <ion-col size="5">
-                        <div>
-                          <p class="text-white">{{rendimentoAnualComInvestimentoRe | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                        </div>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
-                </div>
+              <!-- Detalhamento em meses -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">Rendimento</ion-label>
+              </ion-item>
+              <!-- 1 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">1º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 2 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">2º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 3 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">3º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 4 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">4º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 5 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">5º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 6 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">6º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 7 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">7º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 8 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">8º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 9 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">9º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 10 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">10º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 11 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">11º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- 12 mes -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">12º Mês</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <!-- Detalhamento do rendimento -->
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">Rendimento Reaplicado:</ion-label>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">Anual:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualReaplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">+ Investimento:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualComInvestimentoRe | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">Pontos:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{pontos}}</ion-label>
               </ion-item>
             </ion-list>
           </ion-card-content>
