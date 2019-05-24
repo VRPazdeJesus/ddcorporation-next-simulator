@@ -47,6 +47,13 @@
           <ion-card-content class="alinhamento-centro">
             <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()">Detalhamento<ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
             <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
+              <ion-item lines="full">
+                <ion-label class="text-white item-lista">Valor aplicado:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label class="text-white legenda">O investimento deve ser múltiplo de R$ 165</ion-label>
+              </ion-item>
               <ion-item class="alinhamento-centro">
                 <div>
                   <!-- Meses e rendimentos -->
@@ -246,20 +253,20 @@
                         </div>
                       </ion-col>
                     </ion-row>
-                    <ion-row>
+                    <!-- <ion-row>
                       <ion-col size="12">
                         <div>
                           <p class="text-white">O valor a ser aplicado será de {{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
                         </div>
                       </ion-col>
-                    </ion-row>
-                    <ion-row>
+                    </ion-row> -->
+                    <!-- <ion-row>
                       <ion-col size="12">
                         <div>
                           <p class="text-white">O investimento deve ser múltiplo de R$ 165</p>
                         </div>
                       </ion-col>
-                    </ion-row>
+                    </ion-row> -->
                     <ion-row>
                       <ion-col size="12">
                         <div>
