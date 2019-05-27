@@ -111,7 +111,9 @@ ion-content {
 }
 
 .alinhamento-direita {
-  margin-left: 10px;
+  // margin-left: 5.262626vh;
+  text-align: -webkit-right;
+  text-align: right;
 }
 
 .largura-tela {
