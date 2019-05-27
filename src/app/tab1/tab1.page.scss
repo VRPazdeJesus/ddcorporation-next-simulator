@@ -101,17 +101,21 @@ ion-content {
 }
 
 .legenda {
-  font-size: 10px;
+  font-size: 1.5151515151515151vh;
   margin-top: 0px;
   margin-bottom: 25px;
 }
 
 .item-lista {
-  font-size: 12px;
+  font-size: 1.893939393939394vh;
 }
 
 .alinhamento-direita {
   margin-left: 10px;
+}
+
+.largura-tela {
+  width: 100vw;
 }
 
 ion-slides span .swiper-pagination-bullet {
