@@ -31,7 +31,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   constructor(private platform: Platform) {
     this.investimentoMinimo = 165;
     this.valorAplicado = 0;
-    this.taxa = 12;
+    this.taxa = 0;
     this.pontos = 0;
     this.clique = false;
     this.icon = 'ios-arrow-down';
