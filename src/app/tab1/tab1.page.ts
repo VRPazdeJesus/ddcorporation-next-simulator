@@ -13,7 +13,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public investimentoMinimo:number;
   public investimento:number;
   public valorAplicado:number;
-  public taxa:number;
+  public taxa:number = 0;
   public pontos:number;
   public clique:boolean;
   public icon: string;

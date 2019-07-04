@@ -2,30 +2,25 @@
   max-height: 35vh;
   overflow: hidden;
 }
-
 .header-color {
   --ion-background-color: #212121 !important;
   --background: #212121 !important;
   color: white;
   text-align: center;
 }
-
 .border-btn-grey {
   border: 1px solid #ced4da;
   border-radius: 4px;
 }
-
 .header-color-contrast {
   --ion-background-color: white !important;
   --background: white !important;
   color: #212121;
   text-align: center;
 }
-
 ion-content {
   --ion-background-color: white !important;
 }
-
 .input-value-card {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -43,19 +38,15 @@ ion-content {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 .text-white {
   color: white;
 }
-
 .size-letter-upper {
   font-size: 150%;
 }
-
 .put-margin-bottom {
   margin-bottom: 5px;
 }
-
 .size-logo {
   display: block;
   margin-left: auto;
@@ -63,25 +54,20 @@ ion-content {
   width: 50%;
   height: 50%;
 }
-
 .alinhamento-centro {
   text-align: center !important;
 }
-
 .tamanho-icone {
   color: white;
   font-size: 20px !important;
   margin-left: 30px;
 }
-
 .remove-lista {
   display: none;
 }
-
 .background-white {
   background-color: white;
 }
-
 .margin-less {
   padding-left: unset;
   padding-right: unset;
@@ -94,32 +80,26 @@ ion-content {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
 }
-
 .margin-less-p {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
-
 .legenda {
   font-size: 1.5151515151515151vh;
   margin-top: 0px;
   margin-bottom: 25px;
 }
-
 .item-lista {
   font-size: 1.893939393939394vh;
 }
-
 .alinhamento-direita {
   // margin-left: 5.262626vh;
   text-align: -webkit-right;
   text-align: right;
 }
-
 .largura-tela {
   width: 100vw;
 }
-
 ion-slides span .swiper-pagination-bullet {
   width: 100px !important;
   height: 2px !important;
@@ -128,7 +108,6 @@ ion-slides span .swiper-pagination-bullet {
   background: #000 !important;
   opacity: .2 !important;
 }
-
 div.item-native {
   padding-left: unset;
   padding-right: unset;
@@ -136,4 +115,13 @@ div.item-native {
   /* padding-inline-start: calc(var(--padding-start) + var(--ion-safe-area-left, 0px)); */
   /* -webkit-padding-end: var(--padding-end); */
   /* padding-inline-end: var(--padding-end); */
+}
+// Ion Range
+.buttom-range {
+  background-color: rgb(33, 33, 33);
+  border-radius: 15%;
+  color: white;
+}
+ion-range {
+  padding: 8px 1px;
 }
