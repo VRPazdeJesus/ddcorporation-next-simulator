@@ -182,62 +182,98 @@
               <!-- 1 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">1º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita"> 
+                  <span *ngIf="primeiroAnoReaplicado[1] > 0">{{primeiroAnoReaplicado[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[1] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 2 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">2º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[2] > 0">{{primeiroAnoReaplicado[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[2] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 3 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">3º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[3] > 0">{{primeiroAnoReaplicado[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[3] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 4 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">4º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[4] > 0">{{primeiroAnoReaplicado[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[4] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 5 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">5º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[5] > 0">{{primeiroAnoReaplicado[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[5] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 6 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">6º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[6] > 0">{{primeiroAnoReaplicado[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[6] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 7 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">7º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[7] > 0">{{primeiroAnoReaplicado[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[7] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 8 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">8º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[8] > 0">{{primeiroAnoReaplicado[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[8] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 9 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">9º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[9] > 0">{{primeiroAnoReaplicado[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[9] == 0">----------</span>  
+                </ion-label>
               </ion-item>
               <!-- 10 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">10º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[10] > 0">{{primeiroAnoReaplicado[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[10] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 11 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">11º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[11] > 0">{{primeiroAnoReaplicado[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[11] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- 12 mes -->
               <ion-item lines="full">
                 <ion-label class="text-white item-lista">12º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAnoReaplicado[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">
+                  <span *ngIf="primeiroAnoReaplicado[12] > 0">{{primeiroAnoReaplicado[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[12] == 0">----------</span>
+                </ion-label>
               </ion-item>
               <!-- Detalhamento do rendimento -->
               <ion-item lines="full">
