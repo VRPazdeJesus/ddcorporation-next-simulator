@@ -19,9 +19,12 @@ export class Tab2Page {
   @ViewChild('lineCanvas') lineCanvas;
   lineChart: any;
 
+  @ViewChild('barCanvas') barCanvas;
+  barChart: any;
+
   ngOnInit() {
-    
     this.lineChartMethod();
+    this.barChartMethod();
   }
 
   lineChartMethod() {
@@ -32,7 +35,7 @@ export class Tab2Page {
         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         datasets: [
             {
-                label: 'Rendimentos',
+                label: '% de Rendimentos',
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgba(234, 176, 67, 0.4)',
@@ -58,7 +61,58 @@ export class Tab2Page {
     });
   }
 
+  barChartMethod() {
+    this.barChart = new Chart(this.barCanvas.nativeElement, {
 
+      type: 'bar',
+      data: {
+          labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+              backgroundColor: [
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+
+    });
+  }
 
   async updateToast() {
     let toast = await this.toastCtrl.create({
