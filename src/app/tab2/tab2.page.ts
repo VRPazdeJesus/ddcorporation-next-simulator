@@ -151,6 +151,10 @@ export class Tab2Page {
                 'rgba(234, 176, 67, 1)',
                 'rgba(0, 0, 0, 0.1)'
               ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
               hoverBackgroundColor: [
                 "#FFCE56"
               ]
