@@ -25,53 +25,14 @@ export class Tab2Page {
   }
 
   lineChartMethod() {
-    this.lineChart = new Chart(this.lineCanvas.nativeElement,
-      {
-         type: 'line',
-         data: {
-            labels: this.chartLabels,
-            datasets: [{
-               label                 : 'Daily Technology usage',
-               data                  : this.chartValues,
-               duration              : 2000,
-               easing                : 'easeInQuart',
-               backgroundColor       : this.chartColours,
-               hoverBackgroundColor  : this.chartHoverColours,
-               fill 				   : false
-            }]
-         },
-         options : {
-            maintainAspectRatio: false,
-            legend         : {
-               display     : true,
-               boxWidth    : 80,
-               fontSize    : 15,
-               padding     : 0
-            },
-            scales: {
-               yAxes: [{
-                  ticks: {
-                     beginAtZero:true,
-                     stepSize: 5,
-                     max : 100
-                  }
-               }],
-               xAxes: [{
-                  ticks: {
-                     autoSkip: false
-                  }
-               }]
-            }
-         }
-      });
-
+    
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'line',
       data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho'],
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         datasets: [
             {
-                label: 'Últimos 7 meses',
+                label: 'Rendimentos',
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'rgba(234, 176, 67, 0.4)',
@@ -89,7 +50,7 @@ export class Tab2Page {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
                 spanGaps: false,
             }
         ]
