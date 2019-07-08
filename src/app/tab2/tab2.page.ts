@@ -26,10 +26,18 @@ export class Tab2Page {
   @ViewChild('doughnutCanvas') doughnutCanvas;
   doughnutChart: any;
 
+  @ViewChild('doughnutCanvas2') doughnutCanvas2;
+  doughnutChart2: any;
+
+  @ViewChild('doughnutCanvas3') doughnutCanvas3;
+  doughnutChart3: any;
+
   ngOnInit() {
     this.lineChartMethod();
     this.barChartMethod();
     this.doughnutChartMethod();
+    this.doughnutChartMethod2();
+    this.doughnutChartMethod3();
   }
 
   lineChartMethod() {
@@ -140,6 +148,58 @@ export class Tab2Page {
 
   doughnutChartMethod() {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
+      }
+
+    });
+  }
+
+  doughnutChartMethod2() {
+    this.doughnutChart2 = new Chart(this.doughnutCanvas2.nativeElement, {
+
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
+      }
+
+    });
+  }
+
+  doughnutChartMethod3() {
+    this.doughnutChart3 = new Chart(this.doughnutCanvas3.nativeElement, {
 
       type: 'doughnut',
       data: {
