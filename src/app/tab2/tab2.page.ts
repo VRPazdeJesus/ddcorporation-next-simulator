@@ -22,9 +22,13 @@ export class Tab2Page {
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
 
+  @ViewChild('doughnutCanvas') doughnutCanvas;
+  doughnutChart: any;
+
   ngOnInit() {
     this.lineChartMethod();
     this.barChartMethod();
+    this.doughnutChartMethod();
   }
 
   lineChartMethod() {
@@ -69,7 +73,7 @@ export class Tab2Page {
           labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
           datasets: [{
               label: '% de Rendimentos',
-              data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+              data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
               backgroundColor: [
                 'rgba(234, 176, 67, 0.2)',
                 'rgba(234, 176, 67, 0.2)',
@@ -109,6 +113,28 @@ export class Tab2Page {
                   }
               }]
           }
+      }
+
+    });
+  }
+
+  doughnutChartMethod() {
+    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
       }
 
     });
