@@ -5,6 +5,7 @@ import { ToastController } from '@ionic/angular';
 import { ViewChild, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -72,7 +73,7 @@ export class Tab2Page {
       data: {
           labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
           datasets: [{
-              label: '% de Rendimentos',
+              label: 'Rendimento de',
               data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
               backgroundColor: [
                 'rgba(234, 176, 67, 0.2)',
@@ -106,15 +107,34 @@ export class Tab2Page {
           }]
       },
       options: {
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
+        animation: {
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            var chart = this;
+            var datasets = this.config.data.datasets;
+    
+            datasets.forEach(function (dataset: Array<any>, i: number) {
+              ctx.font = "10px Arial";
+              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
+                ctx.fillText(datasets[i].data[j], p._model.x, p._model.y - 5);
+              });
+            });
           }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend: {
+          display: false
+        }
       }
-
     });
   }
 
