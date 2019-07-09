@@ -40,9 +40,6 @@ export class Tab2Page {
     
   }
 
-  @ViewChild('lineCanvas') lineCanvas;
-  lineChart: any;
-
   @ViewChild('barCanvas') barCanvas;
   barChart: any;
 
@@ -56,45 +53,10 @@ export class Tab2Page {
   doughnutChart3: any;
 
   ngOnInit() {
-    this.lineChartMethod();
     this.barChartMethod();
     this.doughnutChartMethod();
     this.doughnutChartMethod2();
     this.doughnutChartMethod3();
-  }
-
-  lineChartMethod() {
-    
-    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      type: 'line',
-      data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-        datasets: [
-            {
-                label: '% de Rendimentos',
-                fill: false,
-                lineTension: 0.1,
-                backgroundColor: 'rgba(234, 176, 67, 0.4)',
-                borderColor: 'rgba(234, 176, 67, 1)',
-                borderCapStyle: 'square',
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: 'round',
-                pointBorderColor: 'rgba(234, 176, 67, 1)',
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: 'rgba(234, 176, 67, 1)',
-                pointHoverBorderColor: 'rgba(220,220,220,1)',
-                pointHoverBorderWidth: 2,
-                pointRadius: 1,
-                pointHitRadius: 10,
-                data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
-                spanGaps: false,
-            }
-        ]
-      }
-    });
   }
 
   barChartMethod() {
@@ -102,7 +64,7 @@ export class Tab2Page {
 
       type: 'bar',
       data: {
-          labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+          labels: ['Jan-19', 'Fev-19', 'Mar-19', 'Abr-19', 'Mai-19', 'Jun-19', 'Jul-19', 'Ago-19', 'Set-19', 'Out-19', 'Nov-19', 'Dez-19'],
           datasets: [{
               label: 'Rendimento de',
               data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
