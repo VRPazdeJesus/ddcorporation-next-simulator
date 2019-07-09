@@ -34,7 +34,7 @@ export class Tab2Page {
       const value = a.payload.val();
       console.log(data);
       console.log(value);
-      return data;
+      return value;
       });
       }));
     
