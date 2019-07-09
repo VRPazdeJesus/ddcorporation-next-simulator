@@ -65,186 +65,186 @@ export class Tab2Page {
 
   lineChartMethod() {
     
-    // this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-    //   type: 'line',
-    //   data: {
-    //     labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-    //     datasets: [
-    //         {
-    //             label: '% de Rendimentos',
-    //             fill: false,
-    //             lineTension: 0.1,
-    //             backgroundColor: 'rgba(234, 176, 67, 0.4)',
-    //             borderColor: 'rgba(234, 176, 67, 1)',
-    //             borderCapStyle: 'square',
-    //             borderDash: [],
-    //             borderDashOffset: 0.0,
-    //             borderJoinStyle: 'round',
-    //             pointBorderColor: 'rgba(234, 176, 67, 1)',
-    //             pointBackgroundColor: '#fff',
-    //             pointBorderWidth: 1,
-    //             pointHoverRadius: 5,
-    //             pointHoverBackgroundColor: 'rgba(234, 176, 67, 1)',
-    //             pointHoverBorderColor: 'rgba(220,220,220,1)',
-    //             pointHoverBorderWidth: 2,
-    //             pointRadius: 1,
-    //             pointHitRadius: 10,
-    //             data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
-    //             spanGaps: false,
-    //         }
-    //     ]
-    //   }
-    // });
+    this.lineChart = new Chart(this.lineCanvas.nativeElement, {
+      type: 'line',
+      data: {
+        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        datasets: [
+            {
+                label: '% de Rendimentos',
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: 'rgba(234, 176, 67, 0.4)',
+                borderColor: 'rgba(234, 176, 67, 1)',
+                borderCapStyle: 'square',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'round',
+                pointBorderColor: 'rgba(234, 176, 67, 1)',
+                pointBackgroundColor: '#fff',
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: 'rgba(234, 176, 67, 1)',
+                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+                spanGaps: false,
+            }
+        ]
+      }
+    });
   }
 
   barChartMethod() {
-    // this.barChart = new Chart(this.barCanvas.nativeElement, {
+    this.barChart = new Chart(this.barCanvas.nativeElement, {
 
-    //   type: 'bar',
-    //   data: {
-    //       labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-    //       datasets: [{
-    //           label: 'Rendimento de',
-    //           data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
-    //           backgroundColor: [
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)',
-    //             'rgba(234, 176, 67, 0.2)'
-    //           ],
-    //           borderColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)'
-    //           ],
-    //           borderWidth: 1
-    //       }]
-    //   },
-    //   options: {
-    //     animation: {
-    //       onComplete: function () {
-    //         var ctx = this.chart.ctx;
-    //         ctx.textAlign = "center";
-    //         ctx.textBaseline = "middle";
-    //         var chart = this;
-    //         var datasets = this.config.data.datasets;
+      type: 'bar',
+      data: {
+          labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+          datasets: [{
+              label: 'Rendimento de',
+              data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+              backgroundColor: [
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)',
+                'rgba(234, 176, 67, 0.2)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            var chart = this;
+            var datasets = this.config.data.datasets;
     
-    //         datasets.forEach(function (dataset: Array<any>, i: number) {
-    //           ctx.font = "10px Arial";
-    //           ctx.fillStyle = "rgba(234, 176, 67, 1)";
-    //           chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
-    //             ctx.fillText(datasets[i].data[j], p._model.x, p._model.y - 5);
-    //           });
-    //         });
-    //       }
-    //     },
-    //     scales: {
-    //         yAxes: [{
-    //             ticks: {
-    //                 beginAtZero:true
-    //             }
-    //         }]
-    //     },
-    //     legend: {
-    //       display: false
-    //     }
-    //   }
-    // });
+            datasets.forEach(function (dataset: Array<any>, i: number) {
+              ctx.font = "10px Arial";
+              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
+                ctx.fillText(datasets[i].data[j]+'%', p._model.x, p._model.y - 5);
+              });
+            });
+          }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend: {
+          display: false
+        }
+      }
+    });
   }
 
   doughnutChartMethod() {
-    // this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
 
-    //   type: 'doughnut',
-    //   data: {
-    //       labels: ["Julho/19"],
-    //       datasets: [{
-    //           label: '% de Rendimentos',
-    //           data: [9.3, 90.7],
-    //           backgroundColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(0, 0, 0, 0.1)'
-    //           ],
-    //           borderColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //           ],
-    //           hoverBackgroundColor: [
-    //             "#FFCE56"
-    //           ]
-    //       }]
-    //   }
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
+      }
 
-    // });
+    });
   }
 
   doughnutChartMethod2() {
-    // this.doughnutChart2 = new Chart(this.doughnutCanvas2.nativeElement, {
+    this.doughnutChart2 = new Chart(this.doughnutCanvas2.nativeElement, {
 
-    //   type: 'doughnut',
-    //   data: {
-    //       labels: ["Julho/19"],
-    //       datasets: [{
-    //           label: '% de Rendimentos',
-    //           data: [9.3, 90.7],
-    //           backgroundColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(0, 0, 0, 0.1)'
-    //           ],
-    //           borderColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //           ],
-    //           hoverBackgroundColor: [
-    //             "#FFCE56"
-    //           ]
-    //       }]
-    //   }
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
+      }
 
-    // });
+    });
   }
 
   doughnutChartMethod3() {
-    // this.doughnutChart3 = new Chart(this.doughnutCanvas3.nativeElement, {
+    this.doughnutChart3 = new Chart(this.doughnutCanvas3.nativeElement, {
 
-    //   type: 'doughnut',
-    //   data: {
-    //       labels: ["Julho/19"],
-    //       datasets: [{
-    //           label: '% de Rendimentos',
-    //           data: [9.3, 90.7],
-    //           backgroundColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(0, 0, 0, 0.1)'
-    //           ],
-    //           borderColor: [
-    //             'rgba(234, 176, 67, 1)',
-    //             'rgba(234, 176, 67, 1)',
-    //           ],
-    //           hoverBackgroundColor: [
-    //             "#FFCE56"
-    //           ]
-    //       }]
-    //   }
+      type: 'doughnut',
+      data: {
+          labels: ["Julho/19"],
+          datasets: [{
+              label: '% de Rendimentos',
+              data: [9.3, 90.7],
+              backgroundColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(0, 0, 0, 0.1)'
+              ],
+              borderColor: [
+                'rgba(234, 176, 67, 1)',
+                'rgba(234, 176, 67, 1)',
+              ],
+              hoverBackgroundColor: [
+                "#FFCE56"
+              ]
+          }]
+      }
 
-    // });
+    });
   }
 
   async updateToast() {
