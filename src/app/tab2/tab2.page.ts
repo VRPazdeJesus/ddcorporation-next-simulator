@@ -16,11 +16,22 @@ export class Tab2Page {
 
   tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
+  
+  public dia:any;
+  public mes:any;
+  public rendimentos:any;
 
   constructor(public db: AngularFireDatabase, private toastCtrl: ToastController){
-    this.tasksRef = db.list('/mensal');
+    
+    this.consultaMes(db);
+    
+    
+  }
 
-    console.log(this.tasksRef)
+  consultaMes(db: AngularFireDatabase) {
+    let primeiroAno:Array<any> = [];
+    this.tasksRef = db.list('/mensal');
+    // console.log(this.tasksRef);
 
     // this.tasks = this.tasksRef.snapshotChanges().pipe(
     //   map(changes => 
@@ -30,14 +41,20 @@ export class Tab2Page {
     this.tasks = this.tasksRef.snapshotChanges().pipe(
       map(changes => {
       return changes.map(a => {
+      const all = a.payload;
       const data = a.payload.key;
       const value = a.payload.val();
-      console.log(data);
+      primeiroAno.push(all);
+      // console.log(data);
       console.log(value);
-      return value;
+      return all;
       });
-      }));
-    
+    }));
+
+    // console.log('oi');
+    // console.log(this.tasks.);
+    console.log(this.tasks);
+    console.log(primeiroAno);
   }
 
   @ViewChild('barCanvas') barCanvas;
@@ -109,7 +126,7 @@ export class Tab2Page {
             var datasets = this.config.data.datasets;
     
             datasets.forEach(function (dataset: Array<any>, i: number) {
-              ctx.font = "10px Arial";
+              ctx.font = "8px Arial";
               ctx.fillStyle = "rgba(234, 176, 67, 1)";
               chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
                 ctx.fillText(datasets[i].data[j]+'%', p._model.x, p._model.y - 5);
