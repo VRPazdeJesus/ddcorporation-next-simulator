@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class Tab2Page {
   public dadosMes = new Map();
-  private doctors = [];
+  public primeiroAno:Array<number> = [0, 0];
 
   tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
@@ -212,7 +212,7 @@ export class Tab2Page {
           labels: ["Julho/19"],
           datasets: [{
               label: '% de Rendimentos',
-              data: [9.3, 90.7],
+              data: this.primeiroAno,
               backgroundColor: [
                 'rgba(234, 176, 67, 1)',
                 'rgba(0, 0, 0, 0.1)'
@@ -304,6 +304,10 @@ export class Tab2Page {
 
   async hi(){
     console.log(this.dadosMes.has("dia"));
+    console.log(this.dadosMes.get("rendimento"));
+    let r = this.dadosMes.get("rendimento");
+    let s =  100 - r;
+    this.primeiroAno = [r, s];
     this.barChartMethod();
     this.doughnutChartMethod();
     this.doughnutChartMethod2();
