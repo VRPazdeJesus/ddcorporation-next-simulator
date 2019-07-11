@@ -13,6 +13,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public dadosMes = new Map();
+  private doctors = [];
 
   tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
@@ -25,36 +27,90 @@ export class Tab2Page {
     
     this.consultaMes(db);
     
-    
   }
 
   consultaMes(db: AngularFireDatabase) {
-    let primeiroAno:Array<any> = [];
-    this.tasksRef = db.list('/mensal');
-    // console.log(this.tasksRef);
+    // this.tasksRef = db.list('/mensal');
+    
+    // this.tasksRef.snapshotChanges().pipe(
+    //   map(changes => {
+    //   return changes.map(a => {
+    //   const all = a.payload;
+    //   const k = a.payload.key;
+    //   const v = a.payload.val();
+    //   console.log(k);
+    //   console.log(v);
+    //   this.dadosMes.set(k, v);
+    //   return all;
+    //   });
+    // }));
 
-    // this.tasks = this.tasksRef.snapshotChanges().pipe(
-    //   map(changes => 
-    //     changes.map(c => ({ key: c.payload.key,...c.payload.val() }))
+    // console.log(this.dadosMes);
+
+    // this.tasks = db.list('/mensal').snapshotChanges();
+    // console.log(this.tasks);
+
+    //Another
+    
+    // this.db.list('/mensal')
+    //   .snapshotChanges()
+    //   .pipe(
+    //     map(changes => {
+    //       console.log(changes);
+    //       return changes.map(a => {
+    //         const all = a.payload;
+    //         const k = a.payload.key;
+    //         const v = a.payload.val();
+    //         console.log(k);
+    //         console.log(v);
+    //         this.dadosMes.set(k, v);
+    //         return all;
+    //       }
+    //       );
+    //     })
     //   )
-    // );
-    this.tasks = this.tasksRef.snapshotChanges().pipe(
-      map(changes => {
-      return changes.map(a => {
-      const all = a.payload;
-      const data = a.payload.key;
-      const value = a.payload.val();
-      primeiroAno.push(all);
-      // console.log(data);
-      console.log(value);
-      return all;
-      });
-    }));
+    //   .subscribe((data) => {
+        // const transformedData = Object.keys(data).map(key => data[key]);
+        // console.log(transformedData);
+        // this.doctors.push(data);
+      // });
+      // console.log(this.dadosMes);
+      // // console.log(this.dadosMes[0].dia + " g");
+      // console.log(this.dadosMes.get(0) + ' hi');
+      // console.log(this.dadosMes.get("dia") + " oi");
+      
 
-    // console.log('oi');
-    // console.log(this.tasks.);
-    console.log(this.tasks);
-    console.log(primeiroAno);
+      // this.dia = this.dadosMes['dia'];
+      // console.log("oi"+this.dia);
+
+      ///Ahhhh
+      this.db.list('/mensal')
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          // console.log(changes);
+          changes.map(a => {
+            const all = a.payload;
+            const k = a.payload.key;
+            const v = a.payload.val();
+            console.log(k);
+            console.log(v);
+            this.dadosMes.set(k, v);
+          });
+        })
+      )
+      .subscribe(
+        (data) => {
+          this.hi();
+        // const transformedData = Object.keys(data).map(key => data[key]);
+        // console.log(transformedData);
+        // this.doctors.push(data);
+      });
+      // console.log(this.dadosMes;
+      // console.log(this.dadosMes[0].dia + " g");
+      // console.log(this.dadosMes.get(0) + ' hi');
+      // console.log(this.dadosMes.get("dia") + " oi");
+    
   }
 
   @ViewChild('barCanvas') barCanvas;
@@ -70,10 +126,10 @@ export class Tab2Page {
   doughnutChart3: any;
 
   ngOnInit() {
-    this.barChartMethod();
-    this.doughnutChartMethod();
-    this.doughnutChartMethod2();
-    this.doughnutChartMethod3();
+    // this.barChartMethod();
+    // this.doughnutChartMethod();
+    // this.doughnutChartMethod2();
+    // this.doughnutChartMethod3();
   }
 
   barChartMethod() {
@@ -244,6 +300,14 @@ export class Tab2Page {
 
   ionViewDidLoad() {
     
+  }
+
+  async hi(){
+    console.log(this.dadosMes.has("dia"));
+    this.barChartMethod();
+    this.doughnutChartMethod();
+    this.doughnutChartMethod2();
+    this.doughnutChartMethod3();
   }
 
   
