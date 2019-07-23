@@ -1,5 +1,5 @@
 # dreams-digger-news
-Aplicativo para a Dreams Digger, para mostrar os rendimentos das aplicações no NEXT e as notícias da empresa
+Aplicativo para a DD Corporation, para mostrar os rendimentos das aplicações no NEXT e as notícias da empresa
 - Tecnologia: Ionic v4
 - Desenvolvedor: Víctor Romário Paz de Jesus
 
