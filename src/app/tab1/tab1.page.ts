@@ -53,13 +53,11 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   //calcula o valor aceitavel a ser aplicado, um valor que seja divisível pelo investimento mínimo
   marred(investimento:number, investimentoMinimo:number) {
     this.valorAplicado = (investimentoMinimo * (Math.trunc(investimento / investimentoMinimo)));
-    console.log("O valor a ser aplicado será de: ", this.valorAplicado);
   }
 
   //calcula a quantidade de pontos para a rede
   pontosRede(valorAplicado:number, investimentoMinimo:number) {
     this.pontos = (valorAplicado/investimentoMinimo)*8;
-    console.log("O valor de pontos será de: ", this.pontos);
   }
 
   //calcula os rendimentos a juros simples
@@ -123,13 +121,9 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   //clique no detalhamento
   toggleDetails() {
     if (this.clique) {
-      // document.getElementById("detalhamento").setAttribute("remove-lista", "_self");
-      console.log("fechou");
       this.clique = false;
       this.icon = 'ios-arrow-down';
     } else {
-      // document.getElementById("detalhamento").removeAttribute("class");
-      console.log("abriu");
       this.clique = true;
       this.icon = 'ios-arrow-up';
     }
