@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>DD News</name>
-    <description>Aplicativo criado para exibir noticias e valores de rendimentos.</description>
-    <author email="vr.paz.jesus@gmail.com" href="http://ionicframework.com/">Víctor Romário</author>
+<widget id="io.ionic.nextsimulator" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>NEXT Simulator</name>
+    <description>Application designed to display and simulate yields.</description>
+    <author email="social@ddcorporation.com" href="http://ddcorporation.com/">DD Corporation</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
