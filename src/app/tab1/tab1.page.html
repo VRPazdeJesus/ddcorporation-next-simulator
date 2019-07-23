@@ -16,9 +16,9 @@
     <ion-card class="welcome-card">
       <ion-img class="size-logo center" src="/assets/next.png"></ion-img>
       <ion-card-header class="margin-less">
-        <ion-card-subtitle>Qual será o valor aplicado, em reais?</ion-card-subtitle>
-        <ion-input type="number" class="input-value-card" placeholder="R$ 0,00" [(ngModel)]="investimento"></ion-input>
-        <ion-card-subtitle>Taxa de rendimento: {{taxa}}%</ion-card-subtitle>
+        <ion-card-subtitle>What will be the amount applied?</ion-card-subtitle>
+        <ion-input type="number" class="input-value-card" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
+        <ion-card-subtitle>Yield rate: {{taxa}}%</ion-card-subtitle>
         <ion-range color="dark" value=1 min="0" max="100" step="1" snaps="true" [(ngModel)]="taxa">
           <ion-label slot="start">
             <button size="small" class="buttom-range dark" (click)="taxa = taxa - 1"><ion-icon name="remove"></ion-icon></button>
@@ -29,117 +29,117 @@
             <button size="small" class="buttom-range dark" (click)="taxa = taxa + 1"><ion-icon name="add"></ion-icon></button>
           </ion-label>
         </ion-range>
-        <ion-button class="header-color" expand="block" (click) ="getSimular()">Simular</ion-button>
+        <ion-button class="header-color" expand="block" (click) ="getSimular()">Simulate</ion-button>
       </ion-card-header>
     </ion-card>
     <!-- Card de Rendimentos -->
     <ion-slides pager="true">
       <ion-slide>
         <ion-card class="welcome-card header-color largura-tela">
-          <p class="text-white">Rendimento</p>
+          <p class="text-white">Yield</p>
           <hr class="background-white">
           <ion-card-header class="margin-less">
             <ion-grid>
               <ion-row>
                 <ion-col size="12">
                   <div>
-                    <p class="text-white size-letter-upper margin-less-p">{{rendimentoMes | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                    <p class="text-white margin-less-p">Rendimento/mês</p>
+                    <p class="text-white size-letter-upper margin-less-p">{{rendimentoMes | currency:'USD':true:'1.2-2'}}</p>
+                    <p class="text-white margin-less-p">Yield/month</p>
                   </div>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-card-header>
           <ion-card-content class="alinhamento-centro">
-            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()">Detalhamento<ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
+            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()"><ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
             <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
               <!-- Detalhamento do valor aplicado -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Valor aplicado:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Amount applied:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{valorAplicado | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="none">
-                <ion-label class="text-white legenda">O investimento deve ser múltiplo de R$ 165</ion-label>
+                <ion-label class="text-white legenda">Investment must be multiple of: US$ 50</ion-label>
               </ion-item>
               <!-- Detalhamento em meses -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">Rendimento</ion-label>
+                <ion-label class="text-white item-lista">Month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">Yield</ion-label>
               </ion-item>
               <!-- 1 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">1º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">1st month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[1] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 2 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">2º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">2nd month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[2] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 3 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">3º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">3rd month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[3] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 4 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">4º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">4th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[4] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 5 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">5º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">5th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[5] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 6 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">6º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">6th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[6] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 7 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">7º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">7th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[7] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 8 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">8º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">8th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[8] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 9 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">9º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">9th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[9] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 10 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">10º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">10th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[10] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 11 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">11º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">11th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[11] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- 12 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">12º Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">12th month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{primeiroAno[12] | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <!-- Detalhamento do rendimento -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Rendimento:</ion-label>
+                <ion-label class="text-white item-lista"></ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Anual:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnual | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Annual Yield:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnual | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">+ Investimento:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualComInvestimento | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Yield + Investment:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualComInvestimento | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Pontos:</ion-label>
+                <ion-label class="text-white item-lista">Points:</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">{{pontos}}</ion-label>
               </ion-item>
             </ion-list>
@@ -149,146 +149,146 @@
       <!-- Card de Rendimentos Reaplicados -->
       <ion-slide>
         <ion-card class="welcome-card header-color largura-tela">
-          <p class="text-white">Rendimento Reaplicado</p>
+          <p class="text-white">Reapplied Yield</p>
           <hr class="background-white">
           <ion-card-header class="margin-less">
             <ion-grid>
               <ion-row>
                 <ion-col size="12">
                   <div>
-                    <p class="text-white size-letter-upper margin-less-p">{{rendimentoAnualReaplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</p>
-                    <p class="text-white margin-less-p">Rendimento Anual Reaplicado</p>
+                    <p class="text-white size-letter-upper margin-less-p">{{rendimentoAnualReaplicado | currency:'USD':true:'1.2-2'}}</p>
+                    <p class="text-white margin-less-p">Annual Yield Reapplied</p>
                   </div>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-card-header>
           <ion-card-content class="alinhamento-centro">
-            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()">Detalhamento<ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
+            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()"><ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
             <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
               <!-- Detalhamento do valor aplicado -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Valor aplicado:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{valorAplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Amount applied:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{valorAplicado | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="none">
-                <ion-label class="text-white legenda">O investimento deve ser múltiplo de R$ 165</ion-label>
+                <ion-label class="text-white legenda">Investment must be multiple of: US$ 50</ion-label>
               </ion-item>
               <!-- Detalhamento em meses -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Mês</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">Rendimento</ion-label>
+                <ion-label class="text-white item-lista">Month</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">Yield</ion-label>
               </ion-item>
               <!-- 1 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">1º Mês</ion-label>
+                <ion-label class="text-white item-lista">1st month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita"> 
-                  <span *ngIf="primeiroAnoReaplicado[1] > 0">{{primeiroAnoReaplicado[1] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[1] > 0">{{primeiroAnoReaplicado[1] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[1] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 2 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">2º Mês</ion-label>
+                <ion-label class="text-white item-lista">2nd month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[2] > 0">{{primeiroAnoReaplicado[2] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[2] > 0">{{primeiroAnoReaplicado[2] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[2] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 3 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">3º Mês</ion-label>
+                <ion-label class="text-white item-lista">3rd month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[3] > 0">{{primeiroAnoReaplicado[3] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[3] > 0">{{primeiroAnoReaplicado[3] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[3] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 4 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">4º Mês</ion-label>
+                <ion-label class="text-white item-lista">4th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[4] > 0">{{primeiroAnoReaplicado[4] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[4] > 0">{{primeiroAnoReaplicado[4] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[4] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 5 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">5º Mês</ion-label>
+                <ion-label class="text-white item-lista">5th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[5] > 0">{{primeiroAnoReaplicado[5] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[5] > 0">{{primeiroAnoReaplicado[5] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[5] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 6 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">6º Mês</ion-label>
+                <ion-label class="text-white item-lista">6th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[6] > 0">{{primeiroAnoReaplicado[6] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[6] > 0">{{primeiroAnoReaplicado[6] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[6] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 7 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">7º Mês</ion-label>
+                <ion-label class="text-white item-lista">7th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[7] > 0">{{primeiroAnoReaplicado[7] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[7] > 0">{{primeiroAnoReaplicado[7] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[7] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 8 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">8º Mês</ion-label>
+                <ion-label class="text-white item-lista">8th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[8] > 0">{{primeiroAnoReaplicado[8] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[8] > 0">{{primeiroAnoReaplicado[8] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[8] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 9 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">9º Mês</ion-label>
+                <ion-label class="text-white item-lista">9th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[9] > 0">{{primeiroAnoReaplicado[9] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[9] > 0">{{primeiroAnoReaplicado[9] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[9] == 0">----------</span>  
                 </ion-label>
               </ion-item>
               <!-- 10 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">10º Mês</ion-label>
+                <ion-label class="text-white item-lista">10th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[10] > 0">{{primeiroAnoReaplicado[10] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[10] > 0">{{primeiroAnoReaplicado[10] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[10] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 11 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">11º Mês</ion-label>
+                <ion-label class="text-white item-lista">11th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[11] > 0">{{primeiroAnoReaplicado[11] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[11] > 0">{{primeiroAnoReaplicado[11] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[11] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- 12 mes -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">12º Mês</ion-label>
+                <ion-label class="text-white item-lista">12th month</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">
-                  <span *ngIf="primeiroAnoReaplicado[12] > 0">{{primeiroAnoReaplicado[12] | currency:'BRL':'symbol':'1.2-2':'pt'}}</span>
+                  <span *ngIf="primeiroAnoReaplicado[12] > 0">{{primeiroAnoReaplicado[12] | currency:'USD':true:'1.2-2'}}</span>
                   <span *ngIf="primeiroAnoReaplicado[12] == 0">----------</span>
                 </ion-label>
               </ion-item>
               <!-- Detalhamento do rendimento -->
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Rendimento Reaplicado:</ion-label>
+                <ion-label class="text-white item-lista"></ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Anual:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualReaplicado | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Annual Yield:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualReaplicado | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">+ Investimento:</ion-label>
-                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualComInvestimentoRe | currency:'BRL':'symbol':'1.2-2':'pt'}}</ion-label>
+                <ion-label class="text-white item-lista">Yield + Investment:</ion-label>
+                <ion-label class="text-white item-lista alinhamento-direita">{{rendimentoAnualComInvestimentoRe | currency:'USD':true:'1.2-2'}}</ion-label>
               </ion-item>
               <ion-item lines="full">
-                <ion-label class="text-white item-lista">Pontos:</ion-label>
+                <ion-label class="text-white item-lista">Points:</ion-label>
                 <ion-label class="text-white item-lista alinhamento-direita">{{pontos}}</ion-label>
               </ion-item>
             </ion-list>
