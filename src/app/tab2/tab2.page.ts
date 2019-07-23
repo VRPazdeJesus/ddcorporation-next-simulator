@@ -13,127 +13,80 @@ import { map } from 'rxjs/operators';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  // Atributos para armazenar os dados do banco
+  public dadosDia = new Map();
+  public rendimentoDia:Array<number> = [0, 0];
+  public dadosSemana = new Map();
+  public rendimentoSemana:Array<number> = [0, 0];
   public dadosMes = new Map();
-  public primeiroAno:Array<number> = [0, 0];
-
-  tasksRef: AngularFireList<any>;
-  tasks: Observable<any[]>;
-  
-  public dia:any;
-  public mes:any;
-  public rendimentos:any;
-
+  public rendimentoMes:Array<number> = [0, 0];
+  //Atributos dos gráficos que serão gerados
+  @ViewChild('graficoHistoricoCanvas') graficoHistoricoCanvas;
+  graficoHistorico: any;
+  @ViewChild('graficoDiaCanvas') graficoDiaCanvas;
+  graficoDia: any;
+  @ViewChild('graficoSemanaCanvas') graficoSemanaCanvas;
+  graficoSemana: any;
+  @ViewChild('graficoMesCanvas') graficoMesCanvas;
+  graficoMes: any;
+  // Método construtor da classe
   constructor(public db: AngularFireDatabase, private toastCtrl: ToastController){
-    
-    this.consultaMes(db);
-    
+    this.consultaMes();
+    this.consultaSemana();
+    this.consultaDia();
   }
-
-  consultaMes(db: AngularFireDatabase) {
-    // this.tasksRef = db.list('/mensal');
-    
-    // this.tasksRef.snapshotChanges().pipe(
-    //   map(changes => {
-    //   return changes.map(a => {
-    //   const all = a.payload;
-    //   const k = a.payload.key;
-    //   const v = a.payload.val();
-    //   console.log(k);
-    //   console.log(v);
-    //   this.dadosMes.set(k, v);
-    //   return all;
-    //   });
-    // }));
-
-    // console.log(this.dadosMes);
-
-    // this.tasks = db.list('/mensal').snapshotChanges();
-    // console.log(this.tasks);
-
-    //Another
-    
-    // this.db.list('/mensal')
-    //   .snapshotChanges()
-    //   .pipe(
-    //     map(changes => {
-    //       console.log(changes);
-    //       return changes.map(a => {
-    //         const all = a.payload;
-    //         const k = a.payload.key;
-    //         const v = a.payload.val();
-    //         console.log(k);
-    //         console.log(v);
-    //         this.dadosMes.set(k, v);
-    //         return all;
-    //       }
-    //       );
-    //     })
-    //   )
-    //   .subscribe((data) => {
-        // const transformedData = Object.keys(data).map(key => data[key]);
-        // console.log(transformedData);
-        // this.doctors.push(data);
-      // });
-      // console.log(this.dadosMes);
-      // // console.log(this.dadosMes[0].dia + " g");
-      // console.log(this.dadosMes.get(0) + ' hi');
-      // console.log(this.dadosMes.get("dia") + " oi");
-      
-
-      // this.dia = this.dadosMes['dia'];
-      // console.log("oi"+this.dia);
-
-      ///Ahhhh
-      this.db.list('/mensal')
+  // Métodos que irão retornar as informações do Firebase
+  consultaDia() {
+      this.db.list('/rendimento_diario')
+        .snapshotChanges()
+        .pipe(
+          map(changes => {
+            changes.map(a => {
+              const key = a.payload.key;
+              const value = a.payload.val();
+              this.dadosDia.set(key, value);
+            });
+          }))
+        .subscribe(
+          (data) => {
+            this.exibirGraficoDia();
+        });
+  }
+  consultaSemana() {
+    this.db.list('/rendimento_semanal')
       .snapshotChanges()
       .pipe(
         map(changes => {
-          // console.log(changes);
           changes.map(a => {
-            const all = a.payload;
-            const k = a.payload.key;
-            const v = a.payload.val();
-            console.log(k);
-            console.log(v);
-            this.dadosMes.set(k, v);
+            const key = a.payload.key;
+            const value = a.payload.val();
+            this.dadosSemana.set(key, value);
           });
-        })
-      )
+        }))
       .subscribe(
         (data) => {
-          this.hi();
-        // const transformedData = Object.keys(data).map(key => data[key]);
-        // console.log(transformedData);
-        // this.doctors.push(data);
+          this.exibirGraficoSemana();
       });
-      // console.log(this.dadosMes;
-      // console.log(this.dadosMes[0].dia + " g");
-      // console.log(this.dadosMes.get(0) + ' hi');
-      // console.log(this.dadosMes.get("dia") + " oi");
-    
   }
-
-  @ViewChild('barCanvas') barCanvas;
-  barChart: any;
-
-  @ViewChild('doughnutCanvas') doughnutCanvas;
-  doughnutChart: any;
-
-  @ViewChild('doughnutCanvas2') doughnutCanvas2;
-  doughnutChart2: any;
-
-  @ViewChild('doughnutCanvas3') doughnutCanvas3;
-  doughnutChart3: any;
-
-  ngOnInit() {
-    // this.barChartMethod();
-    // this.doughnutChartMethod();
-    // this.doughnutChartMethod2();
-    // this.doughnutChartMethod3();
+  consultaMes() {
+    this.db.list('/rendimento_mensal')
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          changes.map(a => {
+            const key = a.payload.key;
+            const value = a.payload.val();
+            this.dadosMes.set(key, value);
+          });
+        }))
+      .subscribe(
+        (data) => {
+          this.exibirGraficoMes();
+      });
   }
-
-  barChartMethod() {
-    this.barChart = new Chart(this.barCanvas.nativeElement, {
+  // Métodos que irão gerar os gráficos no Chart.js
+  graficoHistoricoGerador() {
+    this.graficoHistorico = new Chart(this.graficoHistoricoCanvas.nativeElement, {
 
       type: 'bar',
       data: {
@@ -203,16 +156,15 @@ export class Tab2Page {
       }
     });
   }
-
-  doughnutChartMethod() {
-    this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
+  graficoDiaGerador() {
+    this.graficoDia = new Chart(this.graficoDiaCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
           labels: ["Julho/19"],
           datasets: [{
               label: '% de Rendimentos',
-              data: this.primeiroAno,
+              data: this.rendimentoDia,
               backgroundColor: [
                 'rgba(234, 176, 67, 1)',
                 'rgba(0, 0, 0, 0.1)'
@@ -229,16 +181,15 @@ export class Tab2Page {
 
     });
   }
-
-  doughnutChartMethod2() {
-    this.doughnutChart2 = new Chart(this.doughnutCanvas2.nativeElement, {
+  graficoSemanaGerador() {
+    this.graficoSemana = new Chart(this.graficoSemanaCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
           labels: ["Julho/19"],
           datasets: [{
               label: '% de Rendimentos',
-              data: [9.3, 90.7],
+              data: this.rendimentoSemana,
               backgroundColor: [
                 'rgba(234, 176, 67, 1)',
                 'rgba(0, 0, 0, 0.1)'
@@ -255,16 +206,15 @@ export class Tab2Page {
 
     });
   }
-
-  doughnutChartMethod3() {
-    this.doughnutChart3 = new Chart(this.doughnutCanvas3.nativeElement, {
+  graficoMesGerador() {
+    this.graficoMes = new Chart(this.graficoMesCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
           labels: ["Julho/19"],
           datasets: [{
               label: '% de Rendimentos',
-              data: [9.3, 90.7],
+              data: this.rendimentoMes,
               backgroundColor: [
                 'rgba(234, 176, 67, 1)',
                 'rgba(0, 0, 0, 0.1)'
@@ -281,7 +231,26 @@ export class Tab2Page {
 
     });
   }
-
+  // Passa as informações do banco de dados para os gráficos
+  async exibirGraficoDia(){
+    let rendDia = this.dadosDia.get("rendimentos");
+    let sobraDia =  10 - rendDia;
+    this.rendimentoDia = [rendDia, sobraDia];
+    this.graficoDiaGerador();
+  }
+  async exibirGraficoSemana(){
+    let rendSemana = this.dadosSemana.get("rendimentos");
+    let sobraSemana =  10 - rendSemana;
+    this.rendimentoSemana = [rendSemana, sobraSemana];
+    this.graficoSemanaGerador();
+  }
+  async exibirGraficoMes(){
+    let rendMes = this.dadosMes.get("rendimentos");
+    let sobraMes =  100 - rendMes;
+    this.rendimentoMes = [rendMes, sobraMes];
+    this.graficoMesGerador();
+  }
+  //Métodos para o Toast
   async updateToast() {
     let toast = await this.toastCtrl.create({
       message: 'Valores atualizados :)',
@@ -289,7 +258,6 @@ export class Tab2Page {
     });
     toast.present();
   }
-
   async notUpdateToast() {
     let toast = await this.toastCtrl.create({
       message: 'Não foi possível atualizar valores :(',
@@ -297,22 +265,5 @@ export class Tab2Page {
     });
     toast.present();
   }
-
-  ionViewDidLoad() {
-    
-  }
-
-  async hi(){
-    console.log(this.dadosMes.has("dia"));
-    console.log(this.dadosMes.get("rendimento"));
-    let r = this.dadosMes.get("rendimento");
-    let s =  100 - r;
-    this.primeiroAno = [r, s];
-    this.barChartMethod();
-    this.doughnutChartMethod();
-    this.doughnutChartMethod2();
-    this.doughnutChartMethod3();
-  }
-
   
 }

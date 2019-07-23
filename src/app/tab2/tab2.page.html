@@ -18,7 +18,7 @@
         <ion-grid>
           <ion-row>
             <ion-col size="12">
-              <canvas #barCanvas></canvas>
+              <canvas #graficoHistoricoCanvas></canvas>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -28,7 +28,12 @@
         <ion-grid>
           <ion-row>
             <ion-col size="12">
-              <canvas #doughnutCanvas></canvas>
+              <h1>Rendimento Diário</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <canvas #graficoDiaCanvas></canvas>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -49,7 +54,12 @@
         <ion-grid>
           <ion-row>
             <ion-col size="12">
-              <canvas #doughnutCanvas2></canvas>
+              <h1>Rendimento Semanal</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <canvas #graficoSemanaCanvas></canvas>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -59,19 +69,15 @@
         <ion-grid>
           <ion-row>
             <ion-col size="12">
-              <canvas #doughnutCanvas3></canvas>
+              <h1>Rendimento Mensal</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <canvas #graficoMesCanvas></canvas>
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-slide>
     </ion-slides>
-  <!-- <ion-list>
-
-    <ion-item *ngFor="let task of tasks | async">
-
-      <input type="text" [(ngModel)]="task">
-
-    </ion-item>
-
-  </ion-list> -->
 </ion-content>
