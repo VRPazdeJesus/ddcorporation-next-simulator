@@ -1,5 +1,5 @@
 # ddcorporation-next-simulator
-Aplicativo para a DD Corporation, para mostrar os rendimentos das aplicações no NEXT e as notícias da empresa
+Aplicativo para a DD Corporation, para mostrar e simular os rendimentos das aplicações no NEXT, da empresa
 - Tecnologia: Ionic v4
 - Desenvolvedor: Víctor Romário Paz de Jesus
 
