@@ -29,7 +29,8 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public primeiroAnoReaplicado:Array<number> = [];
 
   constructor(private platform: Platform) {
-    this.investimentoMinimo = 165;
+    this.investimentoMinimo = 50;
+    this.investimento = 0;
     this.valorAplicado = 0;
     this.taxa = 0;
     this.pontos = 0;
@@ -93,11 +94,11 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
         for(mesPassado = 1; mesPassado < mes; mesPassado++) {
           acumuladoJurosSimples = acumuladoJurosSimples + this.primeiroAno[mesPassado];
         }
-        if(acumuladoJurosSimples < 165) {
+        if(acumuladoJurosSimples < 50) {
           rendimento = 0;
           this.primeiroAnoReaplicado[mes] = rendimento;
           indice.push(mes);
-        } else if(acumuladoJurosSimples >= 165) {
+        } else if(acumuladoJurosSimples >= 50) {
           for( m = 1; m < mes; m++) {
             acumuladoJurosCompostos = acumuladoJurosCompostos + this.primeiroAnoReaplicado[m];
           }
