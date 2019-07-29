@@ -20,6 +20,8 @@ export class Tab2Page {
   public rendimentoSemana:Array<number> = [0, 0];
   public dadosMes = new Map();
   public rendimentoMes:Array<number> = [0, 0];
+  public dadosHistorico:Array<string> = [];
+  public rendimentosHistorico:Array<number> = [];
   //Atributos dos gráficos que serão gerados
   @ViewChild('graficoHistoricoCanvas') graficoHistoricoCanvas;
   graficoHistorico: any;
@@ -34,6 +36,7 @@ export class Tab2Page {
     this.consultaMes();
     this.consultaSemana();
     this.consultaDia();
+    this.consultaHistorico();
   }
   // Métodos que irão retornar as informações do Firebase
   consultaDia() {
@@ -84,16 +87,36 @@ export class Tab2Page {
           this.exibirGraficoMes();
       });
   }
+  consultaHistorico() {
+    this.db.list('/rendimento_anual')
+      .snapshotChanges()
+      .pipe(
+        map(changes => {
+          changes.map(a => {
+            const value = a.payload.val();
+            const apelido = value['apelido'];
+            const rendimentos = value['rendimentos'];
+            console.log(apelido);
+            console.log(rendimentos);
+            this.dadosHistorico.push(apelido);
+            this.rendimentosHistorico.push(rendimentos);
+          });
+        }))
+      .subscribe(
+        (data) => {
+          this.graficoHistoricoGerador();
+      });
+  }
   // Métodos que irão gerar os gráficos no Chart.js
   graficoHistoricoGerador() {
     this.graficoHistorico = new Chart(this.graficoHistoricoCanvas.nativeElement, {
 
       type: 'bar',
       data: {
-          labels: ['Jan-19', 'Fev-19', 'Mar-19', 'Abr-19', 'Mai-19', 'Jun-19', 'Jul-19', 'Ago-19', 'Set-19', 'Out-19', 'Nov-19', 'Dez-19'],
+          labels: this.dadosHistorico,
           datasets: [{
               label: 'Rendimento de',
-              data: [ 12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+              data: this.rendimentosHistorico,
               backgroundColor: [
                 'rgba(234, 176, 67, 0.2)',
                 'rgba(234, 176, 67, 0.2)',
@@ -156,12 +179,12 @@ export class Tab2Page {
       }
     });
   }
-  graficoDiaGerador() {
+  graficoDiaGerador(dia:string, rendimento:number) {
     this.graficoDia = new Chart(this.graficoDiaCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
-          labels: ["Julho/19"],
+          labels: [dia],
           datasets: [{
               label: '% de Rendimentos',
               data: this.rendimentoDia,
@@ -234,9 +257,10 @@ export class Tab2Page {
   // Passa as informações do banco de dados para os gráficos
   async exibirGraficoDia(){
     let rendDia = this.dadosDia.get("rendimentos");
+    let dia = this.dadosDia.get("dia");
     let sobraDia =  10 - rendDia;
     this.rendimentoDia = [rendDia, sobraDia];
-    this.graficoDiaGerador();
+    this.graficoDiaGerador(dia, rendDia);
   }
   async exibirGraficoSemana(){
     let rendSemana = this.dadosSemana.get("rendimentos");
