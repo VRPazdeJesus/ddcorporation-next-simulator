@@ -124,3 +124,8 @@ div.item-native {
 ion-range {
   padding: 8px 1px;
 }
+.item-centralized {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+}
