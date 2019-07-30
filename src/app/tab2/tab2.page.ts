@@ -167,11 +167,13 @@ export class Tab2Page {
           }
         },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
+          yAxes: [{
+            ticks: {
+               beginAtZero:true,
+               stepSize: 2,
+               max : 20
+            }
+          }]
         },
         legend: {
           display: false
@@ -181,27 +183,25 @@ export class Tab2Page {
   }
   graficoDiaGerador(dia:string, rendimento:number) {
     this.graficoDia = new Chart(this.graficoDiaCanvas.nativeElement, {
-
       type: 'doughnut',
       data: {
-          labels: [dia],
-          datasets: [{
-              label: '% de Rendimentos',
-              data: this.rendimentoDia,
-              backgroundColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(0, 0, 0, 0.1)'
-              ],
-              borderColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(234, 176, 67, 1)',
-              ],
-              hoverBackgroundColor: [
-                "#FFCE56"
-              ]
-          }]
+        labels: [dia],
+        datasets: [{
+            label: '% de Rendimentos',
+            data: this.rendimentoDia,
+            backgroundColor: [
+              'rgba(234, 176, 67, 1)',
+              'rgba(0, 0, 0, 0.1)'
+            ],
+            borderColor: [
+              'rgba(234, 176, 67, 1)',
+              'rgba(234, 176, 67, 1)',
+            ],
+            hoverBackgroundColor: [
+              "#FFCE56"
+            ]
+        }]
       }
-
     });
   }
   graficoSemanaGerador(dia:string) {
