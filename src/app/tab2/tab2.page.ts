@@ -204,12 +204,12 @@ export class Tab2Page {
 
     });
   }
-  graficoSemanaGerador() {
+  graficoSemanaGerador(dia:string) {
     this.graficoSemana = new Chart(this.graficoSemanaCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
-          labels: ["Julho/19"],
+          labels: [dia],
           datasets: [{
               label: '% de Rendimentos',
               data: this.rendimentoSemana,
@@ -229,12 +229,12 @@ export class Tab2Page {
 
     });
   }
-  graficoMesGerador() {
+  graficoMesGerador(dia:string) {
     this.graficoMes = new Chart(this.graficoMesCanvas.nativeElement, {
 
       type: 'doughnut',
       data: {
-          labels: ["Julho/19"],
+          labels: [dia],
           datasets: [{
               label: '% de Rendimentos',
               data: this.rendimentoMes,
@@ -264,15 +264,17 @@ export class Tab2Page {
   }
   async exibirGraficoSemana(){
     let rendSemana = this.dadosSemana.get("rendimentos");
+    let dia = this.dadosSemana.get("periodo");
     let sobraSemana =  10 - rendSemana;
     this.rendimentoSemana = [rendSemana, sobraSemana];
-    this.graficoSemanaGerador();
+    this.graficoSemanaGerador(dia);
   }
   async exibirGraficoMes(){
     let rendMes = this.dadosMes.get("rendimentos");
+    let dia = this.dadosMes.get("dia");
     let sobraMes =  100 - rendMes;
     this.rendimentoMes = [rendMes, sobraMes];
-    this.graficoMesGerador();
+    this.graficoMesGerador(dia);
   }
   //Métodos para o Toast
   async updateToast() {

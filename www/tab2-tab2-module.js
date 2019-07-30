@@ -32381,7 +32381,7 @@ var Tab2PageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar class=\"header-color\">\r\n    <ion-title>\r\n      <ion-chip>\r\n        <ion-avatar>\r\n          <img src=\"../../assets/logo-d.png\">\r\n        </ion-avatar>\r\n        <ion-label class=\"text-white\">NEXT Simulator</ion-label>\r\n      </ion-chip>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen>\r\n    <ion-slides pager=\"true\" class=\"rendimentos\">\r\n      <!-- Gráfico dos Últimos 12 Meses -->\r\n      <ion-slide>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <canvas #graficoHistoricoCanvas></canvas>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Diário -->\r\n      <ion-slide>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <h1>Rendimento Diário</h1>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <canvas #graficoDiaCanvas></canvas>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <ion-label color=\"light\">{{dadosMes[0]}}</ion-label>\r\n            </ion-col>\r\n            <ion-col size=\"12\">\r\n              <ion-label color=\"light\">Ligth</ion-label>\r\n            </ion-col>\r\n            <ion-col size=\"12\">\r\n              <ion-label color=\"light\">Light Label</ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Semanal -->\r\n      <ion-slide>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <h1>Rendimento Semanal</h1>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <canvas #graficoSemanaCanvas></canvas>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Mensal -->\r\n      <ion-slide>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <h1>Rendimento Mensal</h1>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <canvas #graficoMesCanvas></canvas>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-slide>\r\n    </ion-slides>\r\n</ion-content>\r\n"
+module.exports = "<ion-header>\r\n  <ion-toolbar class=\"header-color\">\r\n    <ion-title>\r\n      <ion-chip>\r\n        <ion-avatar>\r\n          <img src=\"../../assets/logo-d.png\">\r\n        </ion-avatar>\r\n        <ion-label class=\"text-white\">NEXT Simulator</ion-label>\r\n      </ion-chip>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen>\r\n    <ion-slides pager=\"true\" class=\"rendimentos\">\r\n      <!-- Gráfico dos Últimos 12 Meses -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"light\">Profitability History</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <canvas #graficoHistoricoCanvas></canvas>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Diário -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"light\">Daily Income</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <canvas #graficoDiaCanvas></canvas>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Semanal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Weekly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoSemanaCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Mensal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Monthly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoMesCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n    </ion-slides>\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -32392,7 +32392,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar class=\"header-color\">\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header-color {\n  --ion-background-color: #212121 !important;\n  --background: #212121 !important;\n  color: white;\n  text-align: center; }\n\n.text-white {\n  color: white; }\n\n.rendimentos {\n  height: 100% !important; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMi9DOlxcVXNlcnNcXDc0NjAtUjIwR1xcRG9jdW1lbnRzXFx3b3JrXFxtb2JpbGUtZGV2ZWxvcG1lbnRcXG5leHQtc2ltdWxhdG9yL3NyY1xcYXBwXFx0YWIyXFx0YWIyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBDQUF1QjtFQUN2QixnQ0FBYTtFQUNiLFlBQVk7RUFDWixrQkFBa0IsRUFBQTs7QUFHdEI7RUFDSSxZQUFZLEVBQUE7O0FBR2hCO0VBQ0ksdUJBQXVCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC90YWIyL3RhYjIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1jb2xvciB7XG4gICAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzIxMjEyMSAhaW1wb3J0YW50O1xuICAgIC0tYmFja2dyb3VuZDogIzIxMjEyMSAhaW1wb3J0YW50O1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi50ZXh0LXdoaXRlIHtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cbi5yZW5kaW1lbnRvcyB7XG4gICAgaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XG59XG4iXX0= */"
+module.exports = ".header-color {\n  --ion-background-color: #212121 !important;\n  --background: #212121 !important;\n  color: white;\n  text-align: center; }\n\n.text-white {\n  color: white; }\n\n.rendimentos {\n  height: 100% !important; }\n\n.largura-tela {\n  width: 100vw; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMi9DOlxcVXNlcnNcXDc0NjAtUjIwR1xcRG9jdW1lbnRzXFx3b3JrXFxtb2JpbGUtZGV2ZWxvcG1lbnRcXG5leHQtc2ltdWxhdG9yL3NyY1xcYXBwXFx0YWIyXFx0YWIyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBDQUF1QjtFQUN2QixnQ0FBYTtFQUNiLFlBQVk7RUFDWixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSxZQUFZLEVBQUE7O0FBRWhCO0VBQ0ksdUJBQXVCLEVBQUE7O0FBRTNCO0VBQ0ksWUFBWSxFQUFBIiwiZmlsZSI6InNyYy9hcHAvdGFiMi90YWIyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXItY29sb3Ige1xuICAgIC0taW9uLWJhY2tncm91bmQtY29sb3I6ICMyMTIxMjEgIWltcG9ydGFudDtcbiAgICAtLWJhY2tncm91bmQ6ICMyMTIxMjEgIWltcG9ydGFudDtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLnRleHQtd2hpdGUge1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cbi5yZW5kaW1lbnRvcyB7XG4gICAgaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XG59XG4ubGFyZ3VyYS10ZWxhIHtcbiAgICB3aWR0aDogMTAwdnc7XG59Il19 */"
 
 /***/ }),
 
@@ -32434,9 +32434,12 @@ var Tab2Page = /** @class */ (function () {
         this.rendimentoSemana = [0, 0];
         this.dadosMes = new Map();
         this.rendimentoMes = [0, 0];
+        this.dadosHistorico = [];
+        this.rendimentosHistorico = [];
         this.consultaMes();
         this.consultaSemana();
         this.consultaDia();
+        this.consultaHistorico();
     }
     // Métodos que irão retornar as informações do Firebase
     Tab2Page.prototype.consultaDia = function () {
@@ -32484,15 +32487,34 @@ var Tab2Page = /** @class */ (function () {
             _this.exibirGraficoMes();
         });
     };
+    Tab2Page.prototype.consultaHistorico = function () {
+        var _this = this;
+        this.db.list('/rendimento_anual')
+            .snapshotChanges()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["map"])(function (changes) {
+            changes.map(function (a) {
+                var value = a.payload.val();
+                var apelido = value['apelido'];
+                var rendimentos = value['rendimentos'];
+                console.log(apelido);
+                console.log(rendimentos);
+                _this.dadosHistorico.push(apelido);
+                _this.rendimentosHistorico.push(rendimentos);
+            });
+        }))
+            .subscribe(function (data) {
+            _this.graficoHistoricoGerador();
+        });
+    };
     // Métodos que irão gerar os gráficos no Chart.js
     Tab2Page.prototype.graficoHistoricoGerador = function () {
         this.graficoHistorico = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoHistoricoCanvas.nativeElement, {
             type: 'bar',
             data: {
-                labels: ['Jan-19', 'Fev-19', 'Mar-19', 'Abr-19', 'Mai-19', 'Jun-19', 'Jul-19', 'Ago-19', 'Set-19', 'Out-19', 'Nov-19', 'Dez-19'],
+                labels: this.dadosHistorico,
                 datasets: [{
                         label: 'Rendimento de',
-                        data: [12, 11, 13, 15, 14.5, 12.1, 13.3, 10.3, 11.6, 10.9, 13.1, 12.6],
+                        data: this.rendimentosHistorico,
                         backgroundColor: [
                             'rgba(234, 176, 67, 0.2)',
                             'rgba(234, 176, 67, 0.2)',
@@ -32554,11 +32576,11 @@ var Tab2Page = /** @class */ (function () {
             }
         });
     };
-    Tab2Page.prototype.graficoDiaGerador = function () {
+    Tab2Page.prototype.graficoDiaGerador = function (dia, rendimento) {
         this.graficoDia = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoDiaCanvas.nativeElement, {
             type: 'doughnut',
             data: {
-                labels: ["Julho/19"],
+                labels: [dia],
                 datasets: [{
                         label: '% de Rendimentos',
                         data: this.rendimentoDia,
@@ -32577,11 +32599,11 @@ var Tab2Page = /** @class */ (function () {
             }
         });
     };
-    Tab2Page.prototype.graficoSemanaGerador = function () {
+    Tab2Page.prototype.graficoSemanaGerador = function (dia) {
         this.graficoSemana = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoSemanaCanvas.nativeElement, {
             type: 'doughnut',
             data: {
-                labels: ["Julho/19"],
+                labels: [dia],
                 datasets: [{
                         label: '% de Rendimentos',
                         data: this.rendimentoSemana,
@@ -32600,11 +32622,11 @@ var Tab2Page = /** @class */ (function () {
             }
         });
     };
-    Tab2Page.prototype.graficoMesGerador = function () {
+    Tab2Page.prototype.graficoMesGerador = function (dia) {
         this.graficoMes = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoMesCanvas.nativeElement, {
             type: 'doughnut',
             data: {
-                labels: ["Julho/19"],
+                labels: [dia],
                 datasets: [{
                         label: '% de Rendimentos',
                         data: this.rendimentoMes,
@@ -32626,36 +32648,39 @@ var Tab2Page = /** @class */ (function () {
     // Passa as informações do banco de dados para os gráficos
     Tab2Page.prototype.exibirGraficoDia = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var rendDia, sobraDia;
+            var rendDia, dia, sobraDia;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 rendDia = this.dadosDia.get("rendimentos");
+                dia = this.dadosDia.get("dia");
                 sobraDia = 10 - rendDia;
                 this.rendimentoDia = [rendDia, sobraDia];
-                this.graficoDiaGerador();
+                this.graficoDiaGerador(dia, rendDia);
                 return [2 /*return*/];
             });
         });
     };
     Tab2Page.prototype.exibirGraficoSemana = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var rendSemana, sobraSemana;
+            var rendSemana, dia, sobraSemana;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 rendSemana = this.dadosSemana.get("rendimentos");
+                dia = this.dadosSemana.get("periodo");
                 sobraSemana = 10 - rendSemana;
                 this.rendimentoSemana = [rendSemana, sobraSemana];
-                this.graficoSemanaGerador();
+                this.graficoSemanaGerador(dia);
                 return [2 /*return*/];
             });
         });
     };
     Tab2Page.prototype.exibirGraficoMes = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var rendMes, sobraMes;
+            var rendMes, dia, sobraMes;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 rendMes = this.dadosMes.get("rendimentos");
+                dia = this.dadosMes.get("dia");
                 sobraMes = 100 - rendMes;
                 this.rendimentoMes = [rendMes, sobraMes];
-                this.graficoMesGerador();
+                this.graficoMesGerador(dia);
                 return [2 /*return*/];
             });
         });
