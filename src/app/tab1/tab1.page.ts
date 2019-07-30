@@ -30,7 +30,6 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(private platform: Platform) {
     this.investimentoMinimo = 50;
-    this.investimento = 0;
     this.valorAplicado = 0;
     this.taxa = 0;
     this.pontos = 0;
