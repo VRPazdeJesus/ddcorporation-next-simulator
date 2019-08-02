@@ -1,9 +1,134 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="header-color">
     <ion-title>
-      Convert
+      <ion-chip>
+        <ion-avatar>
+          <img src="../../assets/logo-d.png">
+        </ion-avatar>
+        <ion-label class="text-white">NEXT Simulator</ion-label>
+      </ion-chip>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card class="welcome-card bg">
+    <ion-card-header class="margin-less">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8">
+            <ion-card-subtitle class="item-centralized">What value do you want to convert?</ion-card-subtitle>
+          </ion-col>
+          <ion-col size="4">
+            <ion-input type="number" class="input-value-card" placeholder="US$ 1.00" [(ngModel)]="investimento"></ion-input>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-card-subtitle>{{investimento | currency:'USD':true:'1.2-2'}} dollars</ion-card-subtitle>
+      <!-- <ion-button class="light" expand="block" (click) ="getSimular()">Simulate</ion-button> -->
+    </ion-card-header>
+  </ion-card>
+  <ion-card class="welcome-card bg">
+    <ion-card-content class="alinhamento-centro">
+      <ion-list>
+        <!-- 1 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/aud.png">
+          </ion-avatar>
+          <ion-label class="">AUD:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 2 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/bgn.png">
+          </ion-avatar>
+          <ion-label class="">BGN:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 3 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/brl.png">
+          </ion-avatar>
+          <ion-label class="">BRL:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 4 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/cad.png">
+          </ion-avatar>
+          <ion-label class="">CAD:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 5 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/chf.png">
+          </ion-avatar>
+          <ion-label class="">CHF:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 6 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/cny.png">
+          </ion-avatar>
+          <ion-label class="">CNY:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 7 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/czk.png">
+          </ion-avatar>
+          <ion-label class="">CZK:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 8 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/dkk.png">
+          </ion-avatar>
+          <ion-label class="">DKK:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 9 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/eur.png">
+          </ion-avatar>
+          <ion-label class="">EUR:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 10 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/gbp.png">
+          </ion-avatar>
+          <ion-label class="">GBP:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 11 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/hkd.png">
+          </ion-avatar>
+          <ion-label class="">HKD:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- 12 mes -->
+        <ion-item lines="full">
+          <ion-avatar slot="start">
+            <img src="../../assets/flags/hrk.png">
+          </ion-avatar>
+          <ion-label class="">HRK:</ion-label>  
+          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+        </ion-item>
+        <!-- Detalhamento do rendimento -->
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

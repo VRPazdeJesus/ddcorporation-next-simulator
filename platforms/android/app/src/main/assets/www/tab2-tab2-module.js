@@ -32566,7 +32566,9 @@ var Tab2Page = /** @class */ (function () {
                 scales: {
                     yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                stepSize: 2,
+                                max: 20
                             }
                         }]
                 },
@@ -32596,10 +32598,28 @@ var Tab2Page = /** @class */ (function () {
                             "#FFCE56"
                         ]
                     }]
+            },
+            options: {
+                animation: {
+                    onComplete: function () {
+                        var ctx = this.chart.ctx;
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        var chart = this;
+                        var datasets = this.config.data.datasets;
+                        datasets.forEach(function (dataset, i) {
+                            ctx.font = "15px Arial";
+                            ctx.fillStyle = "rgba(234, 176, 67, 1)";
+                            chart.getDatasetMeta(i).data.forEach(function (p, j) {
+                                ctx.fillText(rendimento + '%', p._model.x, p._model.y);
+                            });
+                        });
+                    }
+                }
             }
         });
     };
-    Tab2Page.prototype.graficoSemanaGerador = function (dia) {
+    Tab2Page.prototype.graficoSemanaGerador = function (dia, rendimento) {
         this.graficoSemana = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoSemanaCanvas.nativeElement, {
             type: 'doughnut',
             data: {
@@ -32619,10 +32639,28 @@ var Tab2Page = /** @class */ (function () {
                             "#FFCE56"
                         ]
                     }]
+            },
+            options: {
+                animation: {
+                    onComplete: function () {
+                        var ctx = this.chart.ctx;
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        var chart = this;
+                        var datasets = this.config.data.datasets;
+                        datasets.forEach(function (dataset, i) {
+                            ctx.font = "15px Arial";
+                            ctx.fillStyle = "rgba(234, 176, 67, 1)";
+                            chart.getDatasetMeta(i).data.forEach(function (p, j) {
+                                ctx.fillText(rendimento + '%', p._model.x, p._model.y);
+                            });
+                        });
+                    }
+                }
             }
         });
     };
-    Tab2Page.prototype.graficoMesGerador = function (dia) {
+    Tab2Page.prototype.graficoMesGerador = function (dia, rendimento) {
         this.graficoMes = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoMesCanvas.nativeElement, {
             type: 'doughnut',
             data: {
@@ -32642,6 +32680,24 @@ var Tab2Page = /** @class */ (function () {
                             "#FFCE56"
                         ]
                     }]
+            },
+            options: {
+                animation: {
+                    onComplete: function () {
+                        var ctx = this.chart.ctx;
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        var chart = this;
+                        var datasets = this.config.data.datasets;
+                        datasets.forEach(function (dataset, i) {
+                            ctx.font = "15px Arial";
+                            ctx.fillStyle = "rgba(234, 176, 67, 1)";
+                            chart.getDatasetMeta(i).data.forEach(function (p, j) {
+                                ctx.fillText(rendimento + '%', p._model.x, p._model.y);
+                            });
+                        });
+                    }
+                }
             }
         });
     };
@@ -32667,7 +32723,7 @@ var Tab2Page = /** @class */ (function () {
                 dia = this.dadosSemana.get("periodo");
                 sobraSemana = 10 - rendSemana;
                 this.rendimentoSemana = [rendSemana, sobraSemana];
-                this.graficoSemanaGerador(dia);
+                this.graficoSemanaGerador(dia, rendSemana);
                 return [2 /*return*/];
             });
         });
@@ -32680,7 +32736,7 @@ var Tab2Page = /** @class */ (function () {
                 dia = this.dadosMes.get("dia");
                 sobraMes = 100 - rendMes;
                 this.rendimentoMes = [rendMes, sobraMes];
-                this.graficoMesGerador(dia);
+                this.graficoMesGerador(dia, rendMes);
                 return [2 /*return*/];
             });
         });

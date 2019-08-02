@@ -201,10 +201,29 @@ export class Tab2Page {
               "#FFCE56"
             ]
         }]
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            var chart = this;
+            var datasets = this.config.data.datasets;
+    
+            datasets.forEach(function (dataset: Array<any>, i: number) {
+              ctx.font = "15px Arial";
+              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
+                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
+              });
+            });
+          }
+        }
       }
     });
   }
-  graficoSemanaGerador(dia:string) {
+  graficoSemanaGerador(dia:string, rendimento:number) {
     this.graficoSemana = new Chart(this.graficoSemanaCanvas.nativeElement, {
 
       type: 'doughnut',
@@ -225,11 +244,30 @@ export class Tab2Page {
                 "#FFCE56"
               ]
           }]
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            var chart = this;
+            var datasets = this.config.data.datasets;
+    
+            datasets.forEach(function (dataset: Array<any>, i: number) {
+              ctx.font = "15px Arial";
+              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
+                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
+              });
+            });
+          }
+        }
       }
 
     });
   }
-  graficoMesGerador(dia:string) {
+  graficoMesGerador(dia:string, rendimento:number) {
     this.graficoMes = new Chart(this.graficoMesCanvas.nativeElement, {
 
       type: 'doughnut',
@@ -250,6 +288,25 @@ export class Tab2Page {
                 "#FFCE56"
               ]
           }]
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var ctx = this.chart.ctx;
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            var chart = this;
+            var datasets = this.config.data.datasets;
+    
+            datasets.forEach(function (dataset: Array<any>, i: number) {
+              ctx.font = "15px Arial";
+              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
+                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
+              });
+            });
+          }
+        }
       }
 
     });
@@ -267,14 +324,14 @@ export class Tab2Page {
     let dia = this.dadosSemana.get("periodo");
     let sobraSemana =  10 - rendSemana;
     this.rendimentoSemana = [rendSemana, sobraSemana];
-    this.graficoSemanaGerador(dia);
+    this.graficoSemanaGerador(dia, rendSemana);
   }
   async exibirGraficoMes(){
     let rendMes = this.dadosMes.get("rendimentos");
     let dia = this.dadosMes.get("dia");
     let sobraMes =  100 - rendMes;
     this.rendimentoMes = [rendMes, sobraMes];
-    this.graficoMesGerador(dia);
+    this.graficoMesGerador(dia, rendMes);
   }
   //Métodos para o Toast
   async updateToast() {
