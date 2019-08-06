@@ -95,18 +95,12 @@ ion-slides span .swiper-pagination-bullet {
 div.item-native {
   padding-left: unset;
   padding-right: unset;
-  /* -webkit-padding-start: calc(var(--padding-start) + var(--ion-safe-area-left, 0px)); */
-  /* padding-inline-start: calc(var(--padding-start) + var(--ion-safe-area-left, 0px)); */
-  /* -webkit-padding-end: var(--padding-end); */
-  /* padding-inline-end: var(--padding-end); */
 }
-// Ion Range
 .buttom-range {
-  background-color: #212121;
+  background-color: #151515;
   border-radius: 15%;
   width: 25px;
   height: 25px;
-  color: white;
 }
 ion-range {
   padding: 8px 1px;

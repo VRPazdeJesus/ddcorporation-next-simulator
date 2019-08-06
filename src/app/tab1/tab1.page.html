@@ -23,19 +23,19 @@
               </ion-col>
           </ion-row>
         </ion-grid>
-        <ion-card-subtitle>Amount applied: {{investimento | currency:'USD':true:'1.2-2'}}</ion-card-subtitle>
-        <ion-card-subtitle>Yield rate: {{taxa}}%</ion-card-subtitle>
-        <ion-range color="dark" value=1 min="0" max="100" step="1" snaps="true" [(ngModel)]="taxa">
+        <ion-card-subtitle class="ion-text-center">Amount applied: {{investimento | currency:'USD':true:'1.2-2'}}</ion-card-subtitle>
+        <ion-card-subtitle class="ion-text-center">Yield rate: {{taxa}}%</ion-card-subtitle>
+        <ion-range color="primary" value=1 min="0" max="100" step="1" snaps="true" [(ngModel)]="taxa">
           <ion-label slot="start">
-            <button size="small" class="buttom-range dark" (click)="taxa = taxa - 1"><ion-icon name="remove"></ion-icon></button>
+            <button size="small" class="buttom-range text-white" (click)="taxa = taxa - 1"><ion-icon name="remove"></ion-icon></button>
             0%
           </ion-label>
           <ion-label slot="end">
             100%
-            <button size="small" class="buttom-range dark" (click)="taxa = taxa + 1"><ion-icon name="add"></ion-icon></button>
+            <button size="small" class="buttom-range text-white" (click)="taxa = taxa + 1"><ion-icon name="add"></ion-icon></button>
           </ion-label>
         </ion-range>
-        <ion-button class="header-color" expand="block" (click) ="getSimular()">Simulate</ion-button>
+        <ion-button class="text-white" expand="block" (click) ="getSimular()">Simulate</ion-button>
       </ion-card-header>
     </ion-card>
     <!-- Card de Rendimentos -->
@@ -57,7 +57,7 @@
             </ion-grid>
           </ion-card-header>
           <ion-card-content class="alinhamento-centro">
-            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()"><ion-icon class="tamanho-icone" color="primary" [name]="icon"></ion-icon></ion-button>
+            <ion-button class="header-color border-btn-grey" expand="block" (click)="toggleDetails()"><ion-icon class="tamanho-icone" color="light" [name]="icon"></ion-icon></ion-button>
             <ion-list id="detalhamento" [ngClass]="{'remove-lista' : !clique}">
               <!-- Detalhamento do valor aplicado -->
               <ion-item lines="full">
