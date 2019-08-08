@@ -89,6 +89,10 @@ ion-slides span .swiper-pagination-bullet {
   display: inline-block !important;
   opacity: .2 !important;
 }
+ion-slides {
+  --bullet-background: #a3a3a3;
+  --bullet-background-active: #E4E4E4;
+}
 ion-list, ion-item {
   --background: #151515 !important;
   --background-color: #151515 !important;
