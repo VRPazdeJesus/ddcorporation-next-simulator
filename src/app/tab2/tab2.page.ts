@@ -118,18 +118,18 @@ export class Tab2Page {
               label: 'Rendimento de',
               data: this.rendimentosHistorico,
               backgroundColor: [
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)',
-                'rgba(234, 176, 67, 0.2)'
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)',
+                'rgba(234, 176, 67, 0.5)'
               ],
               borderColor: [
                 'rgba(234, 176, 67, 1)',
@@ -159,7 +159,7 @@ export class Tab2Page {
     
             datasets.forEach(function (dataset: Array<any>, i: number) {
               ctx.font = "8px Arial";
-              ctx.fillStyle = "rgba(234, 176, 67, 1)";
+              ctx.fillStyle = "rgba(228,228,228, 1)";
               chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
                 ctx.fillText(datasets[i].data[j]+'%', p._model.x, p._model.y - 5);
               });
@@ -169,10 +169,17 @@ export class Tab2Page {
         scales: {
           yAxes: [{
             ticks: {
-               beginAtZero:true,
-               stepSize: 2,
-               max : 20,
-               display:false
+              beginAtZero:true,
+              stepSize: 0.5,
+              max : 17,
+              display:false,
+            }
+          }],
+          xAxes: [{
+            ticks: {
+                autoSkip: false,
+                maxRotation: 90,
+                minRotation: 90
             }
           }]
         },
