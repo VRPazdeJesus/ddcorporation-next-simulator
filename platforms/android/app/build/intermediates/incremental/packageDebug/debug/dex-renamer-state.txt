@@ -1,4 +1,4 @@
-#Tue Aug 06 17:55:02 BRT 2019
+#Fri Aug 09 16:11:30 BRT 2019
 base.0=C\:\\Users\\7460-R20G\\Documents\\work\\mobile-development\\next-simulator\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

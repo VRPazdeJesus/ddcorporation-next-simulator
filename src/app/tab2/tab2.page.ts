@@ -22,11 +22,13 @@ export class Tab2Page {
   public rendimentoMes:Array<number> = [0, 0];
   public dadosHistorico:Array<string> = [];
   public rendimentosHistorico:Array<number> = [];
+  public profitDay = 0;
+  public day:string;
+  public profitWeekly = 0;
+  public week:string;
   //Atributos dos gráficos que serão gerados
   @ViewChild('graficoHistoricoCanvas') graficoHistoricoCanvas;
   graficoHistorico: any;
-  @ViewChild('graficoDiaCanvas') graficoDiaCanvas;
-  graficoDia: any;
   @ViewChild('graficoSemanaCanvas') graficoSemanaCanvas;
   graficoSemana: any;
   @ViewChild('graficoMesCanvas') graficoMesCanvas;
@@ -189,92 +191,6 @@ export class Tab2Page {
       }
     });
   }
-  graficoDiaGerador(dia:string, rendimento:number) {
-    this.graficoDia = new Chart(this.graficoDiaCanvas.nativeElement, {
-      type: 'doughnut',
-      data: {
-        labels: [dia],
-        datasets: [{
-            label: '% de Rendimentos',
-            data: this.rendimentoDia,
-            backgroundColor: [
-              'rgba(234, 176, 67, 1)',
-              'rgba(0, 0, 0, 0.1)'
-            ],
-            borderColor: [
-              'rgba(234, 176, 67, 1)',
-              'rgba(234, 176, 67, 1)',
-            ],
-            hoverBackgroundColor: [
-              "#FFCE56"
-            ]
-        }]
-      },
-      options: {
-        animation: {
-          onComplete: function () {
-            var ctx = this.chart.ctx;
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            var chart = this;
-            var datasets = this.config.data.datasets;
-    
-            datasets.forEach(function (dataset: Array<any>, i: number) {
-              ctx.font = "15px Arial";
-              ctx.fillStyle = "rgba(234, 176, 67, 1)";
-              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
-                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
-              });
-            });
-          }
-        }
-      }
-    });
-  }
-  graficoSemanaGerador(dia:string, rendimento:number) {
-    this.graficoSemana = new Chart(this.graficoSemanaCanvas.nativeElement, {
-
-      type: 'doughnut',
-      data: {
-          labels: [dia],
-          datasets: [{
-              label: '% de Rendimentos',
-              data: this.rendimentoSemana,
-              backgroundColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(0, 0, 0, 0.1)'
-              ],
-              borderColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(234, 176, 67, 1)',
-              ],
-              hoverBackgroundColor: [
-                "#FFCE56"
-              ]
-          }]
-      },
-      options: {
-        animation: {
-          onComplete: function () {
-            var ctx = this.chart.ctx;
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            var chart = this;
-            var datasets = this.config.data.datasets;
-    
-            datasets.forEach(function (dataset: Array<any>, i: number) {
-              ctx.font = "15px Arial";
-              ctx.fillStyle = "rgba(234, 176, 67, 1)";
-              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
-                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
-              });
-            });
-          }
-        }
-      }
-
-    });
-  }
   graficoMesGerador(dia:string, rendimento:number) {
     this.graficoMes = new Chart(this.graficoMesCanvas.nativeElement, {
 
@@ -321,18 +237,12 @@ export class Tab2Page {
   }
   // Passa as informações do banco de dados para os gráficos
   async exibirGraficoDia(){
-    let rendDia = this.dadosDia.get("rendimentos");
-    let dia = this.dadosDia.get("dia");
-    let sobraDia =  10 - rendDia;
-    this.rendimentoDia = [rendDia, sobraDia];
-    this.graficoDiaGerador(dia, rendDia);
+    this.profitDay = this.dadosDia.get("rendimentos");
+    this.day = this.dadosDia.get("dia");
   }
   async exibirGraficoSemana(){
-    let rendSemana = this.dadosSemana.get("rendimentos");
-    let dia = this.dadosSemana.get("periodo");
-    let sobraSemana =  10 - rendSemana;
-    this.rendimentoSemana = [rendSemana, sobraSemana];
-    this.graficoSemanaGerador(dia, rendSemana);
+    this.profitWeekly = this.dadosSemana.get("rendimentos");
+    this.week = this.dadosSemana.get("periodo");
   }
   async exibirGraficoMes(){
     let rendMes = this.dadosMes.get("rendimentos");

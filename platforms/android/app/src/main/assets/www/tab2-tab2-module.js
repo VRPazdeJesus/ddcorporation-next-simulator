@@ -32381,7 +32381,7 @@ var Tab2PageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\r\n  <ion-toolbar class=\"header-color\">\r\n    <ion-title>\r\n      <ion-chip>\r\n        <ion-avatar>\r\n          <img src=\"../../assets/logo-d.png\">\r\n        </ion-avatar>\r\n        <ion-label class=\"text-white\">NEXT Simulator</ion-label>\r\n      </ion-chip>\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content fullscreen>\r\n    <ion-slides pager=\"true\" class=\"rendimentos\">\r\n      <!-- Gráfico dos Últimos 12 Meses -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"light\">Profitability History</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <canvas #graficoHistoricoCanvas></canvas>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Diário -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n            <ion-grid>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"light\">Daily Income</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <canvas #graficoDiaCanvas></canvas>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Semanal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Weekly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoSemanaCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Mensal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Monthly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoMesCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n    </ion-slides>\r\n</ion-content>\r\n"
+module.exports = "<ion-header>\r\n  <ion-toolbar color=\"primary\" class=\"ion-text-center\">\r\n    <ion-title>\r\n      <img class=\"half-img-width\" src=\"../../assets/next-black-logo.svg\">\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n<ion-content fullscreen>\r\n    <ion-slides pager=\"true\" class=\"rendimentos\">\r\n      <!-- Gráfico dos Últimos 12 Meses -->\r\n      <ion-slide>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col size=\"12\">\r\n              <ion-img class=\"chart-icon\" src=\"../../assets/chart-dd.svg\"></ion-img>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col class=\"remove-padding-col\" size=\"12\">\r\n              <ion-label color=\"success\" class=\"size-text-title ion-text-center\">HISTORY</ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row>\r\n            <ion-col class=\"remove-padding-col\" size=\"12\">\r\n              <ion-label color=\"tertiary\" class=\"size-text-title ion-text-center\">PROFIT</ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row class=\"space-subtitle \">\r\n            <ion-col size=\"12\">\r\n              <ion-label color=\"success\" class=\"size-text-subtitle ion-text-center\">12 MONTHS</ion-label>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-row class=\"space-chart\">\r\n            <ion-col size=\"12\">\r\n              <canvas #graficoHistoricoCanvas></canvas>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Diário -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n            <ion-grid class=\"space-grid-dots\">\r\n              <ion-row>\r\n                <ion-col size=\"12\">\r\n                  <ion-img class=\"chart-icon\" src=\"../../assets/chart-dd.svg\"></ion-img>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row>\r\n                <ion-col class=\"remove-padding-col\" size=\"12\">\r\n                  <ion-label color=\"success\" class=\"size-text-title ion-text-center\">DAILY</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row class=\"space-data\">\r\n                <ion-col class=\"remove-padding-col\" size=\"12\">\r\n                  <ion-label color=\"tertiary\" class=\"size-text-title ion-text-center\">PROFIT</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n              <ion-row class=\"space-subtitle border-data-day\">\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"tertiary\" class=\"ion-text-center size-content\">{{profitDay}} %</ion-label>\r\n                </ion-col>\r\n                <ion-col size=\"12\">\r\n                  <ion-label color=\"success\" class=\"ion-text-center site-subcontent\">{{day}}</ion-label>\r\n                </ion-col>\r\n              </ion-row>\r\n            </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Semanal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Weekly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoSemanaCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n      <!-- Gráfico de Rendimento Mensal -->\r\n      <ion-slide>\r\n        <ion-card class=\"largura-tela\">\r\n          <ion-grid>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <ion-label color=\"light\">Monthly Income</ion-label>\r\n              </ion-col>\r\n            </ion-row>\r\n            <ion-row>\r\n              <ion-col size=\"12\">\r\n                <canvas #graficoMesCanvas></canvas>\r\n              </ion-col>\r\n            </ion-row>\r\n          </ion-grid>\r\n        </ion-card>\r\n      </ion-slide>\r\n    </ion-slides>\r\n</ion-content>\r\n"
 
 /***/ }),
 
@@ -32392,7 +32392,7 @@ module.exports = "<ion-header>\r\n  <ion-toolbar class=\"header-color\">\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header-color {\n  --ion-background-color: #212121 !important;\n  --background: #212121 !important;\n  color: white;\n  text-align: center; }\n\n.rendimentos {\n  height: 100% !important; }\n\n.largura-tela {\n  width: 100vw; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMi9DOlxcVXNlcnNcXDc0NjAtUjIwR1xcRG9jdW1lbnRzXFx3b3JrXFxtb2JpbGUtZGV2ZWxvcG1lbnRcXG5leHQtc2ltdWxhdG9yL3NyY1xcYXBwXFx0YWIyXFx0YWIyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBDQUF1QjtFQUN2QixnQ0FBYTtFQUNiLFlBQVk7RUFDWixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSx1QkFBdUIsRUFBQTs7QUFFM0I7RUFDSSxZQUFZLEVBQUEiLCJmaWxlIjoic3JjL2FwcC90YWIyL3RhYjIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlci1jb2xvciB7XG4gICAgLS1pb24tYmFja2dyb3VuZC1jb2xvcjogIzIxMjEyMSAhaW1wb3J0YW50O1xuICAgIC0tYmFja2dyb3VuZDogIzIxMjEyMSAhaW1wb3J0YW50O1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4ucmVuZGltZW50b3Mge1xuICAgIGhlaWdodDogMTAwJSAhaW1wb3J0YW50O1xufVxuLmxhcmd1cmEtdGVsYSB7XG4gICAgd2lkdGg6IDEwMHZ3O1xufSJdfQ== */"
+module.exports = "ion-content {\n  --background: black url('mark-dd.svg') 0 0/100% 100% no-repeat; }\n\n.rendimentos {\n  height: 100% !important; }\n\n.chart-icon {\n  width: 67.56px;\n  margin: auto;\n  display: block; }\n\n.size-text-title {\n  font-size: 40px;\n  font-weight: 200; }\n\n.size-text-subtitle {\n  font-size: 22px;\n  font-weight: 400;\n  border: 1px solid #EB9E30;\n  border-radius: 5px;\n  padding: 5px 20px 5px 20px;\n  font-weight: 200; }\n\nion-slides {\n  --bullet-background: #a3a3a3;\n  --bullet-background-active: #E4E4E4; }\n\n.remove-padding-col {\n  padding: 0px 0px 0px 0px; }\n\n.space-subtitle {\n  padding-top: 40px; }\n\n.space-chart {\n  padding-top: 50px; }\n\n.size-content {\n  font-size: 60px;\n  font-weight: bold; }\n\n.site-subcontent {\n  font-size: 22px;\n  font-weight: bold; }\n\n.border-data-day {\n  border: 1px solid #E4E4E4;\n  padding: 5px 20px 20px 20px;\n  border-radius: 5px; }\n\n.space-data {\n  padding-bottom: 50px; }\n\n.space-grid-dots {\n  padding-bottom: 95px; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMi9DOlxcVXNlcnNcXDc0NjAtUjIwR1xcRG9jdW1lbnRzXFx3b3JrXFxtb2JpbGUtZGV2ZWxvcG1lbnRcXG5leHQtc2ltdWxhdG9yL3NyY1xcYXBwXFx0YWIyXFx0YWIyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDhEQUFhLEVBQUE7O0FBRWpCO0VBQ0ksdUJBQXVCLEVBQUE7O0FBRTNCO0VBQ0ksY0FBYztFQUNkLFlBQVk7RUFDWixjQUFjLEVBQUE7O0FBRWxCO0VBQ0ksZUFBZTtFQUNmLGdCQUFnQixFQUFBOztBQUVwQjtFQUNJLGVBQWU7RUFDZixnQkFBZ0I7RUFDaEIseUJBQXlCO0VBQ3pCLGtCQUFrQjtFQUNsQiwwQkFBMEI7RUFDMUIsZ0JBQWdCLEVBQUE7O0FBRXBCO0VBQ0ksNEJBQW9CO0VBQ3BCLG1DQUEyQixFQUFBOztBQUUvQjtFQUNJLHdCQUF3QixFQUFBOztBQUU1QjtFQUNJLGlCQUFpQixFQUFBOztBQUVyQjtFQUNJLGlCQUFpQixFQUFBOztBQUVyQjtFQUNJLGVBQWU7RUFDZixpQkFBaUIsRUFBQTs7QUFFckI7RUFDSSxlQUFlO0VBQ2YsaUJBQWlCLEVBQUE7O0FBRXJCO0VBQ0kseUJBQXlCO0VBQ3pCLDJCQUEyQjtFQUMzQixrQkFBa0IsRUFBQTs7QUFFdEI7RUFDSSxvQkFBb0IsRUFBQTs7QUFFeEI7RUFDSSxvQkFBb0IsRUFBQSIsImZpbGUiOiJzcmMvYXBwL3RhYjIvdGFiMi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudCB7XG4gICAgLS1iYWNrZ3JvdW5kOiBibGFjayB1cmwoJy4uLy4uL2Fzc2V0cy9tYXJrLWRkLnN2ZycpIDAgMC8xMDAlIDEwMCUgbm8tcmVwZWF0O1xufVxuLnJlbmRpbWVudG9zIHtcbiAgICBoZWlnaHQ6IDEwMCUgIWltcG9ydGFudDtcbn1cbi5jaGFydC1pY29uIHtcbiAgICB3aWR0aDogNjcuNTZweDtcbiAgICBtYXJnaW46IGF1dG87XG4gICAgZGlzcGxheTogYmxvY2s7XG59XG4uc2l6ZS10ZXh0LXRpdGxlIHtcbiAgICBmb250LXNpemU6IDQwcHg7XG4gICAgZm9udC13ZWlnaHQ6IDIwMDtcbn1cbi5zaXplLXRleHQtc3VidGl0bGUge1xuICAgIGZvbnQtc2l6ZTogMjJweDtcbiAgICBmb250LXdlaWdodDogNDAwO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNFQjlFMzA7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4OyAgXG4gICAgcGFkZGluZzogNXB4IDIwcHggNXB4IDIwcHg7XG4gICAgZm9udC13ZWlnaHQ6IDIwMDtcbn1cbmlvbi1zbGlkZXMge1xuICAgIC0tYnVsbGV0LWJhY2tncm91bmQ6ICNhM2EzYTM7XG4gICAgLS1idWxsZXQtYmFja2dyb3VuZC1hY3RpdmU6ICNFNEU0RTQ7XG59XG4ucmVtb3ZlLXBhZGRpbmctY29sIHtcbiAgICBwYWRkaW5nOiAwcHggMHB4IDBweCAwcHg7XG59XG4uc3BhY2Utc3VidGl0bGUge1xuICAgIHBhZGRpbmctdG9wOiA0MHB4O1xufVxuLnNwYWNlLWNoYXJ0IHtcbiAgICBwYWRkaW5nLXRvcDogNTBweDtcbn1cbi5zaXplLWNvbnRlbnQge1xuICAgIGZvbnQtc2l6ZTogNjBweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5zaXRlLXN1YmNvbnRlbnQge1xuICAgIGZvbnQtc2l6ZTogMjJweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbn1cbi5ib3JkZXItZGF0YS1kYXkge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNFNEU0RTQ7XG4gICAgcGFkZGluZzogNXB4IDIwcHggMjBweCAyMHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbn1cbi5zcGFjZS1kYXRhIHtcbiAgICBwYWRkaW5nLWJvdHRvbTogNTBweDtcbn1cbi5zcGFjZS1ncmlkLWRvdHMge1xuICAgIHBhZGRpbmctYm90dG9tOiA5NXB4O1xufSJdfQ== */"
 
 /***/ }),
 
@@ -32436,6 +32436,7 @@ var Tab2Page = /** @class */ (function () {
         this.rendimentoMes = [0, 0];
         this.dadosHistorico = [];
         this.rendimentosHistorico = [];
+        this.profitDay = 0;
         this.consultaMes();
         this.consultaSemana();
         this.consultaDia();
@@ -32516,18 +32517,18 @@ var Tab2Page = /** @class */ (function () {
                         label: 'Rendimento de',
                         data: this.rendimentosHistorico,
                         backgroundColor: [
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)',
-                            'rgba(234, 176, 67, 0.2)'
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)',
+                            'rgba(234, 176, 67, 0.5)'
                         ],
                         borderColor: [
                             'rgba(234, 176, 67, 1)',
@@ -32556,7 +32557,7 @@ var Tab2Page = /** @class */ (function () {
                         var datasets = this.config.data.datasets;
                         datasets.forEach(function (dataset, i) {
                             ctx.font = "8px Arial";
-                            ctx.fillStyle = "rgba(234, 176, 67, 1)";
+                            ctx.fillStyle = "rgba(228,228,228, 1)";
                             chart.getDatasetMeta(i).data.forEach(function (p, j) {
                                 ctx.fillText(datasets[i].data[j] + '%', p._model.x, p._model.y - 5);
                             });
@@ -32567,54 +32568,21 @@ var Tab2Page = /** @class */ (function () {
                     yAxes: [{
                             ticks: {
                                 beginAtZero: true,
-                                stepSize: 2,
-                                max: 20
+                                stepSize: 0.5,
+                                max: 17,
+                                display: false,
+                            }
+                        }],
+                    xAxes: [{
+                            ticks: {
+                                autoSkip: false,
+                                maxRotation: 90,
+                                minRotation: 90
                             }
                         }]
                 },
                 legend: {
                     display: false
-                }
-            }
-        });
-    };
-    Tab2Page.prototype.graficoDiaGerador = function (dia, rendimento) {
-        this.graficoDia = new chart_js__WEBPACK_IMPORTED_MODULE_3__["Chart"](this.graficoDiaCanvas.nativeElement, {
-            type: 'doughnut',
-            data: {
-                labels: [dia],
-                datasets: [{
-                        label: '% de Rendimentos',
-                        data: this.rendimentoDia,
-                        backgroundColor: [
-                            'rgba(234, 176, 67, 1)',
-                            'rgba(0, 0, 0, 0.1)'
-                        ],
-                        borderColor: [
-                            'rgba(234, 176, 67, 1)',
-                            'rgba(234, 176, 67, 1)',
-                        ],
-                        hoverBackgroundColor: [
-                            "#FFCE56"
-                        ]
-                    }]
-            },
-            options: {
-                animation: {
-                    onComplete: function () {
-                        var ctx = this.chart.ctx;
-                        ctx.textAlign = "center";
-                        ctx.textBaseline = "middle";
-                        var chart = this;
-                        var datasets = this.config.data.datasets;
-                        datasets.forEach(function (dataset, i) {
-                            ctx.font = "15px Arial";
-                            ctx.fillStyle = "rgba(234, 176, 67, 1)";
-                            chart.getDatasetMeta(i).data.forEach(function (p, j) {
-                                ctx.fillText(rendimento + '%', p._model.x, p._model.y);
-                            });
-                        });
-                    }
                 }
             }
         });
@@ -32704,13 +32672,9 @@ var Tab2Page = /** @class */ (function () {
     // Passa as informações do banco de dados para os gráficos
     Tab2Page.prototype.exibirGraficoDia = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var rendDia, dia, sobraDia;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                rendDia = this.dadosDia.get("rendimentos");
-                dia = this.dadosDia.get("dia");
-                sobraDia = 10 - rendDia;
-                this.rendimentoDia = [rendDia, sobraDia];
-                this.graficoDiaGerador(dia, rendDia);
+                this.profitDay = this.dadosDia.get("rendimentos");
+                this.day = this.dadosDia.get("dia");
                 return [2 /*return*/];
             });
         });
@@ -32780,10 +32744,6 @@ var Tab2Page = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('graficoHistoricoCanvas'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
     ], Tab2Page.prototype, "graficoHistoricoCanvas", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('graficoDiaCanvas'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
-    ], Tab2Page.prototype, "graficoDiaCanvas", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('graficoSemanaCanvas'),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
