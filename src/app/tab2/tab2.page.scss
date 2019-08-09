@@ -1,11 +1,18 @@
-.header-color {
-    --ion-background-color: #212121 !important;
-    --background: #212121 !important;
-    color: white;
-    text-align: center;
+ion-content {
+    --ion-background-color: #171717 !important;
 }
 .rendimentos {
     height: 100% !important;
+}
+.chart-icon {
+    width: 67.56px;
+    margin: auto;
+    display: block;
+}
+.size-text-title {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
 }
 .largura-tela {
     width: 100vw;

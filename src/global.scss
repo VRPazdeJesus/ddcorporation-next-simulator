@@ -12,11 +12,14 @@
 @font-face {
     font-family: 'Montserrat', sans-serif;
     src: url('font/montserrat.css');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: 200;
 }
 * {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+.half-img-width {
+    max-width: 50%;
 }
 .text-white {
     color: white !important;

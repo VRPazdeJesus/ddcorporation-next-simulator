@@ -171,7 +171,7 @@ export class Tab2Page {
             ticks: {
                beginAtZero:true,
                stepSize: 2,
-               max : 20
+               max : 20,
             }
           }]
         },
