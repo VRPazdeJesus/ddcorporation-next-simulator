@@ -1,5 +1,5 @@
 ion-content {
-    --ion-background-color: #171717 !important;
+    --background: black url('../../assets/mark-dd.svg') 0 0/100% 100% no-repeat;
 }
 .rendimentos {
     height: 100% !important;
@@ -11,8 +11,18 @@ ion-content {
 }
 .size-text-title {
     font-size: 40px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 100;
+}
+.size-text-subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    border: 1px solid #EB9E30;
+    border-radius: 5px;  
+    padding: 5px 20px 5px 20px;
+}
+ion-slides {
+    --bullet-background: #a3a3a3;
+    --bullet-background-active: #E4E4E4;
 }
 .largura-tela {
     width: 100vw;
