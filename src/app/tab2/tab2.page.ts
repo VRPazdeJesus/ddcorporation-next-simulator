@@ -172,6 +172,7 @@ export class Tab2Page {
                beginAtZero:true,
                stepSize: 2,
                max : 20,
+               display:false
             }
           }]
         },
