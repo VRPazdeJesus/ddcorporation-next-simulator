@@ -15,11 +15,8 @@ import { map } from 'rxjs/operators';
 export class Tab2Page {
   // Atributos para armazenar os dados do banco
   public dadosDia = new Map();
-  public rendimentoDia:Array<number> = [0, 0];
   public dadosSemana = new Map();
-  public rendimentoSemana:Array<number> = [0, 0];
   public dadosMes = new Map();
-  public rendimentoMes:Array<number> = [0, 0];
   public dadosHistorico:Array<string> = [];
   public rendimentosHistorico:Array<number> = [];
   public profitDay = 0;
