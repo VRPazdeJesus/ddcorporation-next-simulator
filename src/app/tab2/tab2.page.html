@@ -83,32 +83,43 @@
               <ion-label color="tertiary" class="size-text-title ion-text-center">PROFIT</ion-label>
             </ion-col>
           </ion-row>
-          <ion-row class="space-subtitle border-data-day">
+          <ion-row class="space-subtitle border-data-week">
             <ion-col size="12">
-              <ion-label color="tertiary" class="ion-text-center size-content">{{profitWeekly}} %</ion-label>
+              <ion-label color="success" class="ion-text-center size-content">{{profitWeekly}} %</ion-label>
             </ion-col>
             <ion-col size="12">
-              <ion-label color="success" class="ion-text-center site-subcontent">{{week}}</ion-label>
+              <ion-label color="tertiary" class="ion-text-center site-subcontent">{{week}}</ion-label>
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-slide>
       <!-- Gráfico de Rendimento Mensal -->
       <ion-slide>
-        <ion-card class="largura-tela">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="12">
-                <ion-label color="light">Monthly Income</ion-label>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="12">
-                <canvas #graficoMesCanvas></canvas>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card>
+        <ion-grid class="space-grid-dots">
+          <ion-row>
+            <ion-col size="12">
+              <ion-img class="chart-icon" src="../../assets/chart-dd.svg"></ion-img>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="remove-padding-col" size="12">
+              <ion-label color="success" class="size-text-title ion-text-center">MONTHLY</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row class="space-data">
+            <ion-col class="remove-padding-col" size="12">
+              <ion-label color="tertiary" class="size-text-title ion-text-center">PROFIT</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row class="space-subtitle border-data-week">
+            <ion-col size="12">
+              <ion-label color="tertiary" class="ion-text-center size-content">{{profitMonthly}} %</ion-label>
+            </ion-col>
+            <ion-col size="12">
+              <ion-label color="success" class="ion-text-center site-subcontent">{{month}}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-slide>
     </ion-slides>
 </ion-content>

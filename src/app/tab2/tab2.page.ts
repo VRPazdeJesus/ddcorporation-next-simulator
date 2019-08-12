@@ -26,13 +26,11 @@ export class Tab2Page {
   public day:string;
   public profitWeekly = 0;
   public week:string;
+  public profitMonthly = 0;
+  public month:string;
   //Atributos dos gráficos que serão gerados
   @ViewChild('graficoHistoricoCanvas') graficoHistoricoCanvas;
   graficoHistorico: any;
-  @ViewChild('graficoSemanaCanvas') graficoSemanaCanvas;
-  graficoSemana: any;
-  @ViewChild('graficoMesCanvas') graficoMesCanvas;
-  graficoMes: any;
   // Método construtor da classe
   constructor(public db: AngularFireDatabase, private toastCtrl: ToastController){
     this.consultaMes();
@@ -191,50 +189,6 @@ export class Tab2Page {
       }
     });
   }
-  graficoMesGerador(dia:string, rendimento:number) {
-    this.graficoMes = new Chart(this.graficoMesCanvas.nativeElement, {
-
-      type: 'doughnut',
-      data: {
-          labels: [dia],
-          datasets: [{
-              label: '% de Rendimentos',
-              data: this.rendimentoMes,
-              backgroundColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(0, 0, 0, 0.1)'
-              ],
-              borderColor: [
-                'rgba(234, 176, 67, 1)',
-                'rgba(234, 176, 67, 1)',
-              ],
-              hoverBackgroundColor: [
-                "#FFCE56"
-              ]
-          }]
-      },
-      options: {
-        animation: {
-          onComplete: function () {
-            var ctx = this.chart.ctx;
-            ctx.textAlign = "center";
-            ctx.textBaseline = "middle";
-            var chart = this;
-            var datasets = this.config.data.datasets;
-    
-            datasets.forEach(function (dataset: Array<any>, i: number) {
-              ctx.font = "15px Arial";
-              ctx.fillStyle = "rgba(234, 176, 67, 1)";
-              chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
-                ctx.fillText(rendimento+'%', p._model.x, p._model.y);
-              });
-            });
-          }
-        }
-      }
-
-    });
-  }
   // Passa as informações do banco de dados para os gráficos
   async exibirGraficoDia(){
     this.profitDay = this.dadosDia.get("rendimentos");
@@ -245,11 +199,8 @@ export class Tab2Page {
     this.week = this.dadosSemana.get("periodo");
   }
   async exibirGraficoMes(){
-    let rendMes = this.dadosMes.get("rendimentos");
-    let dia = this.dadosMes.get("dia");
-    let sobraMes =  100 - rendMes;
-    this.rendimentoMes = [rendMes, sobraMes];
-    this.graficoMesGerador(dia, rendMes);
+    this.profitMonthly = this.dadosMes.get("rendimentos");
+    this.month = this.dadosMes.get("dia");
   }
   //Métodos para o Toast
   async updateToast() {
