@@ -93,8 +93,6 @@ export class Tab2Page {
             const value = a.payload.val();
             const apelido = value['apelido'];
             const rendimentos = value['rendimentos'];
-            console.log(apelido);
-            console.log(rendimentos);
             this.dadosHistorico.push(apelido);
             this.rendimentosHistorico.push(rendimentos);
           });
@@ -154,7 +152,7 @@ export class Tab2Page {
             var datasets = this.config.data.datasets;
 
             datasets.forEach(function (dataset: Array<any>, i: number) {
-              ctx.font = "8px Arial";
+              ctx.font = "8px Montserrat";
               ctx.fillStyle = "rgba(228,228,228, 1)";
               chart.getDatasetMeta(i).data.forEach(function (p: any, j: any) {
                 ctx.fillText(datasets[i].data[j]+'%', p._model.x, p._model.y - 5);
@@ -184,7 +182,8 @@ export class Tab2Page {
         },
         tooltips:{
           enabled:false
-        }
+        },
+        responsive: true
       }
     });
   }
