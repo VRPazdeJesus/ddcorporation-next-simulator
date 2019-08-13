@@ -112,7 +112,6 @@ export class Tab2Page {
       data: {
           labels: this.dadosHistorico,
           datasets: [{
-              label: 'Rendimento de',
               data: this.rendimentosHistorico,
               backgroundColor: [
                 'rgba(234, 176, 67, 0.5)',
