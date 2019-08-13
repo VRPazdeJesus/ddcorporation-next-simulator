@@ -152,7 +152,7 @@ export class Tab2Page {
             ctx.textBaseline = "middle";
             var chart = this;
             var datasets = this.config.data.datasets;
-    
+
             datasets.forEach(function (dataset: Array<any>, i: number) {
               ctx.font = "8px Arial";
               ctx.fillStyle = "rgba(228,228,228, 1)";
@@ -181,6 +181,9 @@ export class Tab2Page {
         },
         legend: {
           display: false
+        },
+        tooltips:{
+          enabled:false
         }
       }
     });
