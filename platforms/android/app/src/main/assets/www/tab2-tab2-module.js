@@ -32496,8 +32496,6 @@ var Tab2Page = /** @class */ (function () {
                 var value = a.payload.val();
                 var apelido = value['apelido'];
                 var rendimentos = value['rendimentos'];
-                console.log(apelido);
-                console.log(rendimentos);
                 _this.dadosHistorico.push(apelido);
                 _this.rendimentosHistorico.push(rendimentos);
             });
@@ -32513,7 +32511,6 @@ var Tab2Page = /** @class */ (function () {
             data: {
                 labels: this.dadosHistorico,
                 datasets: [{
-                        label: 'Rendimento de',
                         data: this.rendimentosHistorico,
                         backgroundColor: [
                             'rgba(234, 176, 67, 0.5)',
@@ -32555,7 +32552,7 @@ var Tab2Page = /** @class */ (function () {
                         var chart = this;
                         var datasets = this.config.data.datasets;
                         datasets.forEach(function (dataset, i) {
-                            ctx.font = "8px Arial";
+                            ctx.font = "8px Montserrat";
                             ctx.fillStyle = "rgba(228,228,228, 1)";
                             chart.getDatasetMeta(i).data.forEach(function (p, j) {
                                 ctx.fillText(datasets[i].data[j] + '%', p._model.x, p._model.y - 5);
@@ -32582,7 +32579,11 @@ var Tab2Page = /** @class */ (function () {
                 },
                 legend: {
                     display: false
-                }
+                },
+                tooltips: {
+                    enabled: false
+                },
+                responsive: true
             }
         });
     };

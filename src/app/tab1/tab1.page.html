@@ -11,34 +11,34 @@
     <ion-card-header class="margin-less">
       <ion-grid>
         <ion-row>
-          <ion-col size="7">
-            <ion-card-subtitle class="ion-text-center">What will be the amount applied?</ion-card-subtitle>
+          <ion-col size="7" class="align-vertically-center">
+            <ion-card-subtitle class="ion-text-center bold-text">What will be the amount applied?</ion-card-subtitle>
           </ion-col>
           <ion-col size="5">
-            <ion-input type="number" class="input-value-card" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
+            <ion-input type="number" class="input-value-card bold-text" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
             </ion-col>
         </ion-row>
       </ion-grid>
       <ion-card-subtitle class="ion-text-center">Amount applied: {{investimento | currency:'USD':true:'1.2-2'}}</ion-card-subtitle>
-      <ion-card-subtitle class="ion-text-center">Yield rate: {{taxa}}%</ion-card-subtitle>
+      <ion-card-subtitle class="ion-text-center bold-text">Yield rate: {{taxa}}%</ion-card-subtitle>
       <ion-range color="primary" value=1 min="0" max="100" step="1" snaps="true" [(ngModel)]="taxa">
-        <ion-label slot="start">
+        <ion-label slot="start" class="bold-text">
           <button size="small" class="buttom-range text-white" (click)="taxa = taxa - 1"><ion-icon name="remove"></ion-icon></button>
           0%
         </ion-label>
-        <ion-label slot="end">
+        <ion-label slot="end" class="bold-text">
           100%
           <button size="small" class="buttom-range text-white" (click)="taxa = taxa + 1"><ion-icon name="add"></ion-icon></button>
         </ion-label>
       </ion-range>
-      <ion-button class="text-white" expand="block" (click) ="getSimular()">Simulate</ion-button>
+      <ion-button class="text-white bold-text" expand="block" (click) ="getSimular()">Simulate</ion-button>
     </ion-card-header>
   </ion-card>
   <!-- Card de Rendimentos -->
   <ion-slides pager="true">
     <ion-slide>
       <ion-card color="primary" class="screen-size">
-        <p class="text-white">Yield</p>
+        <p class="text-white bold-text">Yield</p>
         <hr class="background-white">
         <ion-card-header class="margin-less">
           <ion-grid>
@@ -151,7 +151,7 @@
     <!-- Card de Rendimentos Reaplicados -->
     <ion-slide>
       <ion-card color="primary" class="screen-size">
-        <p class="text-white">Reapplied Yield</p>
+        <p class="text-white bold-text">Reapplied Yield</p>
         <hr class="background-white">
         <ion-card-header class="margin-less">
           <ion-grid>

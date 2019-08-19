@@ -1,133 +1,143 @@
 <ion-header>
-  <ion-toolbar class="header-color">
+  <ion-toolbar color="primary" class="ion-text-center">
     <ion-title>
-      <ion-chip>
-        <ion-avatar>
-          <img src="../../assets/logo-d.png">
-        </ion-avatar>
-        <ion-label class="text-white">NEXT Simulator</ion-label>
-      </ion-chip>
+      <img class="half-img-width" src="../../assets/next-black-logo.svg">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card bg">
+  <ion-card color="primary">
     <ion-card-header class="margin-less">
       <ion-grid>
         <ion-row>
-          <ion-col size="8">
-            <ion-card-subtitle class="item-centralized">What value do you want to convert?</ion-card-subtitle>
+          <ion-col size="8" class="align-vertically-center">
+            <ion-card-subtitle class="ion-text-center bold-text">Value to convert:</ion-card-subtitle>
           </ion-col>
           <ion-col size="4">
-            <ion-input type="number" class="input-value-card" placeholder="US$ 1.00" [(ngModel)]="investimento"></ion-input>
+            <ion-input type="number" class="input-value-card bold-text" placeholder="US$ 50.00" [(ngModel)]="investimento" (keyup)="onKey()"></ion-input>
             </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-card-subtitle>{{investimento | currency:'USD':true:'1.2-2'}} dollars</ion-card-subtitle>
-      <!-- <ion-button class="light" expand="block" (click) ="getSimular()">Simulate</ion-button> -->
+      <ion-card-subtitle class="ion-text-center">
+          <span *ngIf="investimento > 0">{{investimento | currency:'USD':true:'1.2-2'}} dollars</span>
+          <span *ngIf="investimento == 0"></span>
+      </ion-card-subtitle>
     </ion-card-header>
   </ion-card>
-  <ion-card class="welcome-card bg">
-    <ion-card-content class="alinhamento-centro">
+  <ion-card class="bg">
+    <ion-card-content>
       <ion-list>
-        <!-- 1 mes -->
+        <!-- Reino Unido -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/aud.png">
-          </ion-avatar>
-          <ion-label class="">AUD:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{AUD | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/aud.png"><img> 
         </ion-item>
-        <!-- 2 mes -->
+        <!-- Bulgária -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/bgn.png">
-          </ion-avatar>
-          <ion-label class="">BGN:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{BGN | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/bgn.png"><img> 
         </ion-item>
-        <!-- 3 mes -->
+        <!-- Brasil -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/brl.png">
-          </ion-avatar>
-          <ion-label class="">BRL:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{BRL | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/brl.png"><img>
         </ion-item>
-        <!-- 4 mes -->
+        <!-- Canadá -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/cad.png">
-          </ion-avatar>
-          <ion-label class="">CAD:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{CAD | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/cad.png"><img>
         </ion-item>
-        <!-- 5 mes -->
+        <!-- Suíça -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/chf.png">
-          </ion-avatar>
-          <ion-label class="">CHF:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{CHF | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/chf.png"><img>
         </ion-item>
-        <!-- 6 mes -->
+        <!-- China -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/cny.png">
-          </ion-avatar>
-          <ion-label class="">CNY:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{CNY | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/cny.png"><img>
         </ion-item>
-        <!-- 7 mes -->
+        <!-- República Tcheca -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/czk.png">
-          </ion-avatar>
-          <ion-label class="">CZK:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{CZK | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/czk.png"><img>
         </ion-item>
-        <!-- 8 mes -->
+        <!-- Dinamarca -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/dkk.png">
-          </ion-avatar>
-          <ion-label class="">DKK:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{DKK | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/dkk.png"><img>
         </ion-item>
-        <!-- 9 mes -->
+        <!-- Europa -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/eur.png">
-          </ion-avatar>
-          <ion-label class="">EUR:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{EUR | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/eur.png"><img>
         </ion-item>
-        <!-- 10 mes -->
+        <!-- Libra - Reino Unido -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/gbp.png">
-          </ion-avatar>
-          <ion-label class="">GBP:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{GBP | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/gbp.png"><img>
         </ion-item>
-        <!-- 11 mes -->
+        <!-- Hong Kong -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/hkd.png">
-          </ion-avatar>
-          <ion-label class="">HKD:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{HKD | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/hkd.png"><img>
         </ion-item>
-        <!-- 12 mes -->
+        <!-- Indonésia -->
         <ion-item lines="full">
-          <ion-avatar slot="start">
-            <img src="../../assets/flags/hrk.png">
-          </ion-avatar>
-          <ion-label class="">HRK:</ion-label>  
-          <ion-label class="item-lista alinhamento-direita" slot="end">{{3 | currency:'USD':true:'1.2-2'}}</ion-label>
+          <ion-label slot="start">{{IDR | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/idr.png"><img>
         </ion-item>
-        <!-- Detalhamento do rendimento -->
+        <!-- Índia -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{INR | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/inr.png"><img>
+        </ion-item>
+        <!-- Japão -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{JPY | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/jpy.png"><img>
+        </ion-item>
+        <!-- Coreia do Sul -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{KRW | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/krw.png"><img>
+        </ion-item>
+        <!-- México -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{MXN | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/mxn.png"><img>
+        </ion-item>
+        <!-- Noruega -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{NOK | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/nok.png"><img>
+        </ion-item>
+        <!-- Polônia -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{PLN | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/pln.png"><img>
+        </ion-item>
+        <!-- Suécia -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{SEK | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/sek.png"><img>
+        </ion-item>
+        <!-- Tailândia -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{THB | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/thb.png"><img>
+        </ion-item>
+        <!-- Turquia -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{TRY | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/try.png"><img>
+        </ion-item>
+        <!-- África do Sul -->
+        <ion-item lines="full">
+          <ion-label slot="start">{{ZAR | currency:'USD':true:'1.2-2'}}</ion-label>
+          <img slot="end" class="flag" src="../../assets/flags/zar.png"><img>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
