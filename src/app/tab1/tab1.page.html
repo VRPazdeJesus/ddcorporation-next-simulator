@@ -15,11 +15,11 @@
             <ion-card-subtitle class="ion-text-center bold-text">What will be the amount applied?</ion-card-subtitle>
           </ion-col>
           <ion-col size="5">
-            <ion-input type="number" class="input-value-card bold-text" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
+            <ion-input type="number" class="input-value-card" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
             </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-card-subtitle class="ion-text-center">Amount applied: {{investimento | currency:'USD':true:'1.2-2'}}</ion-card-subtitle>
+      <ion-card-subtitle class="ion-text-center bold-text">Amount applied: {{investimento | currency:'USD':true:'1.2-2'}}</ion-card-subtitle>
       <ion-card-subtitle class="ion-text-center bold-text">Yield rate: {{taxa}}%</ion-card-subtitle>
       <ion-range color="primary" value=1 min="0" max="100" step="1" snaps="true" [(ngModel)]="taxa">
         <ion-label slot="start" class="bold-text">
