@@ -1,5 +1,23 @@
 {
     "tab1": {
-        "pergunta": "What will be the amount applied?"
+        "pergunta": "What amount to aplly?",
+        "info": "Amount applied",
+        "taxa": "Rate of yield",
+        "botao": "Simulate",
+        "rendimento": "Yield",
+        "legenda": "Yield / month",
+        "aplicado": "Amount applied",
+        "condicao": "Investment must be $ 50 multiple",
+        "mes": "Month",
+        "valor": "Yield",
+        "primeiro": "st month",
+        "segundo": "nd month",
+        "terceiro": "rd month",
+        "outros": "th month",
+        "anual": "Annual Yield",
+        "invest": "Yield + Investment",
+        "pontos": "Points",
+        "reaplicado": "Reapplied Yield",
+        "resultado": "Annual Yield Reapplied"
     }
 }

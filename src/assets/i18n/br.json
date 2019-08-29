@@ -1,5 +1,23 @@
 {
     "tab1": {
-        "pergunta": "Qual o montante que deseja aplicar ?"
+        "pergunta": "Qual o montante que deseja aplicar ?",
+        "info": "Montante aplicado",
+        "taxa": "Taxa de rendimento",
+        "botao": "Simular",
+        "rendimento": "Rendimento",
+        "legenda": "Rendimento / mês",
+        "aplicado": "Montante aplicado",
+        "condicao": "O investimento deve ser multiplo de $50 dólares",
+        "mes": "Mês",
+        "valor": "Rendimento",
+        "primeiro": "º mês",
+        "segundo": "º mês",
+        "terceiro": "º mês",
+        "outros": "º mês",
+        "anual": "Rendimento Anual",
+        "invest": "Rendimentos + Investimento",
+        "pontos": "Pontos",
+        "reaplicado": "Rendimento Reaplicado",
+        "resultado": "Rendimento Anual Reaplicado"
     }
 }

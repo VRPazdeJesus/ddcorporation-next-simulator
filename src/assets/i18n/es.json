@@ -1,5 +1,23 @@
 {
     "tab1": {
-        "pergunta": "¿Cuál monto desea invertir?"
+        "pergunta": "¿Cuál monto desea invertir?",
+        "info": "Monto invertido",
+        "taxa": "Tasa de rendimiento",
+        "botao": "Simulación",
+        "rendimento": "Rendimiento",
+        "legenda": "Rendimiento / mes",
+        "aplicado": "Cantidad aplicada",
+        "condicao": "La inversión debe ser múltiplo de 50 dólares",
+        "mes": "Mes",
+        "valor": "Valor",
+        "primeiro": "º mes",
+        "segundo": "º mes",
+        "terceiro": "º mes",
+        "outros": "º mes",
+        "anual": "Rendimiento Anual",
+        "invest": "Rendimiento + Inversión",
+        "pontos": "Puntos",
+        "reaplicado": "Rendimiento Reinvertido",
+        "resultado": "Rendimento Anual Reinvertido"
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { TranslateConfigService } from '../translate-config.service';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -29,9 +30,9 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
   // Tradução
-  public selectedLanguage:string;
+  public selectedLanguage:string = 'es';
 
-  constructor(private platform: Platform, private translateConfigService: TranslateConfigService) {
+  constructor(private platform: Platform, private translateConfigService: TranslateConfigService, public alertController: AlertController) {
     this.investimentoMinimo = 50;
     this.valorAplicado = 0;
     this.taxa = 0;
@@ -43,7 +44,9 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.rendimentoAnualComInvestimento = 0;
     this.rendimentoAnualReaplicado = 0;
     this.rendimentoAnualComInvestimentoRe = 0;
-    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+    this.languageChanged();
+    // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+    this.presentAlertMultipleButtons();
   }
 
   languageChanged(){
@@ -147,4 +150,42 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy() {
     this.backButtonSubscription.unsubscribe();
   }
+
+  //alertas
+  async presentAlertMultipleButtons() {
+    const alert = await this.alertController.create({
+      header: 'Language',
+      // subHeader: 'Subtitle',
+      // message: 'This is an alert message.',
+      buttons: [
+        {
+          text: 'English',
+          handler: () => {
+            this.selectedLanguage = 'en';
+            this.translateConfigService.setLanguage(this.selectedLanguage);
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Portugês',
+          handler: () => {
+            this.selectedLanguage = 'br';
+            this.translateConfigService.setLanguage(this.selectedLanguage);
+            console.log('Confirm Ok');
+          }
+        },
+        {
+          text: 'Espanol',
+          handler: () => {
+            this.selectedLanguage = 'es';
+            this.translateConfigService.setLanguage(this.selectedLanguage);
+            console.log('Confirm Ok');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
 }

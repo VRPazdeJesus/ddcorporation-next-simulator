@@ -8,7 +8,7 @@ import { TranslateConfigService } from '../translate-config.service';
 })
 export class TabsPage {
   // public selectedLanguage:string;
-  // public oi:string = "heello mundooo";
+  
  
   constructor(private translateConfigService: TranslateConfigService){
     // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
