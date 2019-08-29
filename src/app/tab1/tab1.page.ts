@@ -29,8 +29,6 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public rendimentoAnualReaplicado:number;
   public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
-  // Tradução
-  // public selectedLanguage:string = 'es';
 
   constructor(private platform: Platform, private translateConfigService: TranslateConfigService, public alertController: AlertController) {
     this.investimentoMinimo = 50;
@@ -44,15 +42,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.rendimentoAnualComInvestimento = 0;
     this.rendimentoAnualReaplicado = 0;
     this.rendimentoAnualComInvestimentoRe = 0;
-    // this.languageChanged();
-    // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
-    // this.presentAlertMultipleButtons();
   }
-
-  // languageChanged(){
-  //   this.translateConfigService.setLanguage(this.selectedLanguage);
-  // }
-
   //método chamado pelo clique do botão simular
   getSimular() {
     this.marred(this.investimento, this.investimentoMinimo);
@@ -152,25 +142,21 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   }
 
   //alertas
-  async presentAlertMultipleButtons() {
+  async selectLanguage() {
     const alert = await this.alertController.create({
-      header: 'Language',
-      // subHeader: 'Subtitle',
-      // message: 'This is an alert message.',
+      header: 'Idioma',
       buttons: [
         {
           text: 'English',
           handler: () => {
             let selectedLanguage = 'en';
             this.translateConfigService.setLanguage(selectedLanguage);
-            console.log('Confirm Cancel');
           }
         }, {
           text: 'Portugês',
           handler: () => {
             let selectedLanguage = 'br';
             this.translateConfigService.setLanguage(selectedLanguage);
-            console.log('Confirm Ok');
           }
         },
         {
@@ -178,7 +164,6 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
           handler: () => {
             let selectedLanguage = 'es';
             this.translateConfigService.setLanguage(selectedLanguage);
-            console.log('Confirm Ok');
           }
         }
       ]
