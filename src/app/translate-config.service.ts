@@ -8,11 +8,11 @@ export class TranslateConfigService {
 
   public selectedLanguage:string = 'es';
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService) { 
+    this.getDefaultLanguage();
+  }
 
   getDefaultLanguage(){
-    // let language = this.translate.getBrowserLang();
-    // let language = 'br';
     this.translate.setDefaultLang(this.selectedLanguage);
     return this.selectedLanguage;
   }
