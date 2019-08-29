@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { TranslateConfigService } from '../translate-config.service';
 
 
 @Component({
@@ -27,8 +28,10 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public rendimentoAnualReaplicado:number;
   public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
+  // Tradução
+  public selectedLanguage:string;
 
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform, private translateConfigService: TranslateConfigService) {
     this.investimentoMinimo = 50;
     this.valorAplicado = 0;
     this.taxa = 0;
@@ -40,6 +43,11 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.rendimentoAnualComInvestimento = 0;
     this.rendimentoAnualReaplicado = 0;
     this.rendimentoAnualComInvestimentoRe = 0;
+    this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
+  }
+
+  languageChanged(){
+    this.translateConfigService.setLanguage(this.selectedLanguage);
   }
 
   //método chamado pelo clique do botão simular

@@ -6,13 +6,29 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+    <ion-menu side="start" menuId="first">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>Start Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
   <!-- Card de Entrada de Dados -->
   <ion-card class="margin-card">
     <ion-card-header class="margin-less">
       <ion-grid>
         <ion-row>
           <ion-col size="7" class="align-vertically-center">
-            <ion-card-subtitle class="ion-text-center bold-text">What will be the amount applied?</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-center bold-text">{{ 'tab1.pergunta' | translate }}</ion-card-subtitle>
           </ion-col>
           <ion-col size="5">
             <ion-input type="number" class="input-value-card" placeholder="US$ 0.00" [(ngModel)]="investimento"></ion-input>
