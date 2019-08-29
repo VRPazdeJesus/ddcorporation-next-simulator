@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary" class="ion-text-center">
     <ion-title>
-      <img class="half-img-width" src="../../assets/next-black-logo.svg">
+      <img class="half-img-width" src="../../assets/next-black-logo.svg" (click) ="selectLanguage()">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,13 +17,12 @@
           </ion-row>
           <ion-row>
             <ion-col class="remove-padding-col" size="12">
-              <!-- <ion-label>{{ 'tab1.pergunta' | translate }}</ion-label> -->
-              <ion-label color="success" class="size-text-title ion-text-center bold-text">DAILY</ion-label>
+              <ion-label color="success" class="size-text-title ion-text-center bold-text">{{'tab2.diario1' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-data">
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">PROFIT</ion-label>
+              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">{{'tab2.diario2' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-subtitle border-data-day">
@@ -46,17 +45,17 @@
           </ion-row>
           <ion-row>
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="success" class="size-text-title ion-text-center bold-text">HISTORY</ion-label>
+              <ion-label color="success" class="size-text-title ion-text-center bold-text">{{'tab2.historico1' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">PROFIT</ion-label>
+              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">{{'tab2.historico2' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-subtitle ">
             <ion-col size="12">
-              <ion-label color="success" class="size-text-subtitle ion-text-center">12 MONTHS</ion-label>
+              <ion-label color="success" class="size-text-subtitle ion-text-center">12 {{'tab2.mes' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-chart">
@@ -76,12 +75,12 @@
           </ion-row>
           <ion-row>
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="success" class="size-text-title ion-text-center bold-text">WEEKLY</ion-label>
+              <ion-label color="success" class="size-text-title ion-text-center bold-text">{{'tab2.semanal1' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-data">
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">PROFIT</ion-label>
+              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">{{'tab2.semanal2' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-subtitle border-data-week">
@@ -104,12 +103,12 @@
           </ion-row>
           <ion-row>
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="success" class="size-text-title ion-text-center bold-text">MONTHLY</ion-label>
+              <ion-label color="success" class="size-text-title ion-text-center bold-text">{{'tab2.mensal1' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-data">
             <ion-col class="remove-padding-col" size="12">
-              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">PROFIT</ion-label>
+              <ion-label color="tertiary" class="size-text-title ion-text-center bold-text">{{'tab2.mensal2' | translate}}</ion-label>
             </ion-col>
           </ion-row>
           <ion-row class="space-subtitle border-data-week">

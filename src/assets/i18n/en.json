@@ -22,5 +22,19 @@
         "aba1": "Simulator",
         "aba2": "Profit",
         "aba3": "Convert"
+    },
+    "tab2": {
+        "historico1": "HISTORY OF",
+        "historico2": "YIELD",
+        "diario1": "DAILY",
+        "diario2": "INCOME",
+        "semanal1": "WEEKLY",
+        "semanal2": "INCOME",
+        "mensal1": "MONTHLY",
+        "mensal2": "INCOME",
+        "mes": "MONTHS"
+    },
+    "tab3": {
+        "frase": "Value to convert"
     }
 }

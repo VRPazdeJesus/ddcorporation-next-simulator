@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TranslateConfigService } from '../translate-config.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -53,7 +55,8 @@ export class Tab3Page {
   public taxaTRY:number;
   public ZAR:number = 0;
   public taxaZAR:number;
-  constructor(private http: HttpClient) {
+  
+  constructor(private http: HttpClient, private translateConfigService: TranslateConfigService, public alertController: AlertController) {
     //pegando o valor da taxa atual do dollar
     this.http.get('https://api.exchangeratesapi.io/latest').subscribe((response) => {
       console.log(response['rates']);  
@@ -82,6 +85,7 @@ export class Tab3Page {
       this.taxaZAR = response['rates']['ZAR'];
     });
   }
+  //Quando digitar
   onKey(){
     this.AUD = this.investimento * (this.taxaAUD / this.taxaUSD);
     this.BGN = this.investimento * (this.taxaBGN / this.taxaUSD);
@@ -106,5 +110,35 @@ export class Tab3Page {
     this.THB = this.investimento * (this.taxaTHB / this.taxaUSD);
     this.TRY = this.investimento * (this.taxaTRY / this.taxaUSD);
     this.ZAR = this.investimento * (this.taxaZAR / this.taxaUSD);
+  }
+  //alerta
+  async selectLanguage() {
+    const alert = await this.alertController.create({
+      header: 'Idioma',
+      buttons: [
+        {
+          text: 'English',
+          handler: () => {
+            let selectedLanguage = 'en';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        }, {
+          text: 'Portugês',
+          handler: () => {
+            let selectedLanguage = 'br';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        },
+        {
+          text: 'Espanol',
+          handler: () => {
+            let selectedLanguage = 'es';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

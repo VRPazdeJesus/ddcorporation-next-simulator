@@ -6,6 +6,9 @@ import { Chart } from 'chart.js';
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+//Tradutor
+import { TranslateConfigService } from '../translate-config.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -29,7 +32,7 @@ export class Tab2Page {
   @ViewChild('graficoHistoricoCanvas') graficoHistoricoCanvas;
   graficoHistorico: any;
   // Método construtor da classe
-  constructor(public db: AngularFireDatabase, private toastCtrl: ToastController){
+  constructor(public db: AngularFireDatabase, private toastCtrl: ToastController, private translateConfigService: TranslateConfigService, public alertController: AlertController){
     this.consultaMes();
     this.consultaSemana();
     this.consultaDia();
@@ -214,6 +217,36 @@ export class Tab2Page {
       duration: 3000
     });
     toast.present();
+  }
+  //alerta
+  async selectLanguage() {
+    const alert = await this.alertController.create({
+      header: 'Idioma',
+      buttons: [
+        {
+          text: 'English',
+          handler: () => {
+            let selectedLanguage = 'en';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        }, {
+          text: 'Portugês',
+          handler: () => {
+            let selectedLanguage = 'br';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        },
+        {
+          text: 'Espanol',
+          handler: () => {
+            let selectedLanguage = 'es';
+            this.translateConfigService.setLanguage(selectedLanguage);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
   
 }

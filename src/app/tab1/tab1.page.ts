@@ -141,7 +141,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.backButtonSubscription.unsubscribe();
   }
 
-  //alertas
+  //alerta
   async selectLanguage() {
     const alert = await this.alertController.create({
       header: 'Idioma',

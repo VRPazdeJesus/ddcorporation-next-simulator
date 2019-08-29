@@ -22,5 +22,19 @@
         "aba1": "Simulador",
         "aba2": "Rendimiento",
         "aba3": "Convertidor"
+    },
+    "tab2": {
+        "historico1": "HISTORIAL DE",
+        "historico2": "RENDIMIENTO",
+        "diario1": "RENDIMIENTO",
+        "diario2": "DIARIO",
+        "semanal1": "RENDIMIENTO",
+        "semanal2": "SEMANAL",
+        "mensal1": "RENDIMIENTO",
+        "mensal2": "MENSUAL",
+        "mes": "MESES"
+    },
+    "tab3": {
+        "frase": "Monto a convertir"
     }
 }
