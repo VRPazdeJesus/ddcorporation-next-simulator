@@ -7,16 +7,14 @@ import { TranslateConfigService } from '../translate-config.service';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-  // public selectedLanguage:string;
-  
- 
+  // Tradução
+  public selectedLanguage:string = 'es';
+
   constructor(private translateConfigService: TranslateConfigService){
-    // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
-    // console.log("Anitta");
-    
+    // this.languageChanged();
   }
- 
-  // languageChanged(){
-  //   this.translateConfigService.setLanguage(this.selectedLanguage);
-  // }
+
+  languageChanged(){
+    this.translateConfigService.setLanguage(this.selectedLanguage);
+  }
 }

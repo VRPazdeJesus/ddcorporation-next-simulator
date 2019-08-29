@@ -18,6 +18,9 @@
         "invest": "Rendimiento + Inversión",
         "pontos": "Puntos",
         "reaplicado": "Rendimiento Reinvertido",
-        "resultado": "Rendimento Anual Reinvertido"
+        "resultado": "Rendimento Anual Reinvertido",
+        "aba1": "Simulador",
+        "aba2": "Rendimiento",
+        "aba3": "Convertidor"
     }
 }

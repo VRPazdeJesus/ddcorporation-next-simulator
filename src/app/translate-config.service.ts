@@ -6,13 +6,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TranslateConfigService {
 
+  public selectedLanguage:string = 'es';
+
   constructor(private translate: TranslateService) { }
 
   getDefaultLanguage(){
-    let language = this.translate.getBrowserLang();
+    // let language = this.translate.getBrowserLang();
     // let language = 'br';
-    this.translate.setDefaultLang(language);
-    return language;
+    this.translate.setDefaultLang(this.selectedLanguage);
+    return this.selectedLanguage;
   }
 
   setLanguage(setLang) {

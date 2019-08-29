@@ -18,6 +18,9 @@
         "invest": "Yield + Investment",
         "pontos": "Points",
         "reaplicado": "Reapplied Yield",
-        "resultado": "Annual Yield Reapplied"
+        "resultado": "Annual Yield Reapplied",
+        "aba1": "Simulator",
+        "aba2": "Profit",
+        "aba3": "Convert"
     }
 }

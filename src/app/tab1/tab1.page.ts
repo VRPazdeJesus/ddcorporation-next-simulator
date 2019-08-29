@@ -30,7 +30,7 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
   public rendimentoAnualComInvestimentoRe:number;
   public primeiroAnoReaplicado:Array<number> = [];
   // Tradução
-  public selectedLanguage:string = 'es';
+  // public selectedLanguage:string = 'es';
 
   constructor(private platform: Platform, private translateConfigService: TranslateConfigService, public alertController: AlertController) {
     this.investimentoMinimo = 50;
@@ -44,14 +44,14 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
     this.rendimentoAnualComInvestimento = 0;
     this.rendimentoAnualReaplicado = 0;
     this.rendimentoAnualComInvestimentoRe = 0;
-    this.languageChanged();
+    // this.languageChanged();
     // this.selectedLanguage = this.translateConfigService.getDefaultLanguage();
-    this.presentAlertMultipleButtons();
+    // this.presentAlertMultipleButtons();
   }
 
-  languageChanged(){
-    this.translateConfigService.setLanguage(this.selectedLanguage);
-  }
+  // languageChanged(){
+  //   this.translateConfigService.setLanguage(this.selectedLanguage);
+  // }
 
   //método chamado pelo clique do botão simular
   getSimular() {
@@ -161,23 +161,23 @@ export class Tab1Page implements OnInit, OnDestroy, AfterViewInit {
         {
           text: 'English',
           handler: () => {
-            this.selectedLanguage = 'en';
-            this.translateConfigService.setLanguage(this.selectedLanguage);
+            let selectedLanguage = 'en';
+            this.translateConfigService.setLanguage(selectedLanguage);
             console.log('Confirm Cancel');
           }
         }, {
           text: 'Portugês',
           handler: () => {
-            this.selectedLanguage = 'br';
-            this.translateConfigService.setLanguage(this.selectedLanguage);
+            let selectedLanguage = 'br';
+            this.translateConfigService.setLanguage(selectedLanguage);
             console.log('Confirm Ok');
           }
         },
         {
           text: 'Espanol',
           handler: () => {
-            this.selectedLanguage = 'es';
-            this.translateConfigService.setLanguage(this.selectedLanguage);
+            let selectedLanguage = 'es';
+            this.translateConfigService.setLanguage(selectedLanguage);
             console.log('Confirm Ok');
           }
         }
